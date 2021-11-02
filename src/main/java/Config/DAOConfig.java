@@ -5,6 +5,8 @@
  */
 package Config;
 
+import Login.LoginDAO;
+import Login.LoginHibernateDAO;
 import Usuari.UsuariDAO;
 import Usuari.UsuariHibernateDAO;
 import org.springframework.context.annotation.Bean;
@@ -13,13 +15,18 @@ import org.springframework.context.annotation.Configuration;
 /**
  *
  * @author Nerea Gallardo
- * @version 1.0
+ * @version 1.1
  */
 @Configuration
 public class DAOConfig {
     @Bean
     public UsuariDAO usuariDAO() {
         return new UsuariHibernateDAO();
+    }
+    
+    @Bean
+    public LoginDAO loginDAO() {
+        return new LoginHibernateDAO();
     }
     
 }

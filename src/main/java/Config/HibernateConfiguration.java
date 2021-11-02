@@ -5,6 +5,7 @@
  */
 package Config;
 
+import Login.Login;
 import Usuari.Usuari;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ import org.springframework.context.annotation.Import;
 /**
  *
  * @author Nerea Gallardo
- * @version 1.0
+ * @version 1.1
  */
 
 @Configuration
@@ -36,8 +37,8 @@ class HibernateConfiguration {
     public LocalSessionFactoryBean sessionFactory(DataSource dataSource) throws NamingException {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
-        sessionFactory.setPackagesToScan("Usuari.Usuari");
-        sessionFactory.setAnnotatedClasses(Usuari.class);
+        sessionFactory.setPackagesToScan("Usuari.Usuari","Login.Login");
+        sessionFactory.setAnnotatedClasses(Usuari.class, Login.class);
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }

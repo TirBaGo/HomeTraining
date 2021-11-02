@@ -90,11 +90,11 @@ public class UsuariDAOTest {
         
     }
     
-    @Test
-    public void DeliminarUsuari() {
-        usuari.setDNI("47919553L");
-       usuariDAO.eliminarUsuari(usuari);
-    }
+    //@Test
+    //public void DeliminarUsuari() {
+    //    usuari.setDNI("47919553L");
+    //   usuariDAO.eliminarUsuari(usuari);
+    //}
    
     
 }
