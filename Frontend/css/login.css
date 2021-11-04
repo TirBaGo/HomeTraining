@@ -13,21 +13,6 @@ body {
   margin: auto;
 }
 
-input {
-  outline: none;
-  border: none;
-}
-
-textarea {
-  outline: none;
-  border: none;
-}
-
-textarea:focus,
-input:focus {
-  border-color: transparent !important;
-}
-
 input:focus::-webkit-input-placeholder {
   color: transparent;
 }
@@ -135,7 +120,7 @@ iframe {
 
 .login-container {
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -331,7 +316,6 @@ iframe {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 }
-
 
 .bb-login-form-btn:hover .bb-form-bgbtn {
   left: 0;
