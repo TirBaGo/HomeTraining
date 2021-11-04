@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 
   <head>
     <meta charset="utf-8" />
@@ -55,6 +57,7 @@
               <a class="nav-link" href="./web-pages/registro.html">Regístrate</a>
             </li>
           </ul>
+
         </div>
       </nav>
     </header>
@@ -63,11 +66,13 @@
 
       <!-- Carousel -->
       <section class="carousel slide" data-ride="carousel">
+
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
           <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
+
         <div class="carousel-inner font-weight-bold">
           <div class="carousel-item active">
             <img class="img-responsive"
@@ -79,10 +84,12 @@
                 <h1 class="display-2 font-weight-bold">Home Training.</h1>
                 <p id="carousel__p">Tu gimnasio en casa.</p>
                 <p><a class="btn btn-lg btn-dark font-weight-bold" href="#">Regístrate</a></p>
+
               </div>
             </div>
           </div>
           <div class="carousel-item">
+
             <img class="img-responsive"
               src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
               width="100" class="d-block w-80" alt="Segunda imagen del carousel" />
@@ -92,10 +99,12 @@
                 <h1 class="display-2 font-weight-bold">Home training.</h1>
                 <p id="carousel__p">Entrenamientos en casa.</p>
                 <p><a class="btn btn-lg btn-dark font-weight-bold" href="#">Leer más</a></p>
+
               </div>
             </div>
           </div>
           <div class="carousel-item">
+
             <img class="img-responsive"
               src="https://images.pexels.com/photos/841135/pexels-photo-841135.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" width="100"
               class="d-block w-80" alt="Tercera imangen del carousel" />
@@ -105,6 +114,7 @@
                 <h1 class="display-2 font-weight-bold">Home Training.</h1>
                 <p id="carousel__p">Entrena en casa como si estuvieses en el gimnasio.</p>
                 <p><a class="btn btn-lg btn-dark font-weight-bold" href="#">Galería</a></p>
+
               </div>
             </div>
           </div>
@@ -117,6 +127,7 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
+
       </section>
       <!-- ./Carousel -->
 
@@ -544,5 +555,6 @@
       })
     </script> -->
   </body>
+
 
 </html>
