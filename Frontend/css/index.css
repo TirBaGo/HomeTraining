@@ -8,6 +8,10 @@ body {
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
+#mycarousel {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 
 /* Carousel base class */
 .carousel {
@@ -36,24 +40,6 @@ body {
 
 #carousel__p {
   font-size: 1.8rem;
-}
-
-/* MARKETING CONTENT
--------------------------------------------------- */
-
-/* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.marketing h2 {
-  font-weight: 600;
-}
-
-.marketing .col-lg-4 p {
-  margin-right: 0.75rem;
-  margin-left: 0.75rem;
 }
 
 /* RESPONSIVE CSS
@@ -98,13 +84,31 @@ body {
 
 /* Entrenadores
 ----------------------------------------------------- */
-
-#entrenadores{
+.entrenador {
   background-color: #e5383b;
+  margin-bottom: 3.5rem;
 }
 
-#entrenadores div {
+.entrenador div {
   background-color: #f5f3f4;
+}
+
+.entrenador .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.entrenador h2 {
+  font-weight: 600;
+}
+
+.entrenador .col-lg-4 p {
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+}
+
+.personal:hover {
+  box-shadow: 0 5px 20px black;
 }
 
 /* Programas
@@ -112,6 +116,11 @@ body {
 
 #programas {
   background-color: #d3d3d3;
+}
+
+.thumbnail:hover {
+  /* box-shadow: 5px 10px 8px #888888; */
+  box-shadow: 0 5px 20px black;
 }
 
 .view-group {
@@ -187,11 +196,25 @@ body {
 
 /* Subscripcion
 ------------------------------------------------------- */
+#subscripcion h4 {
+  font-weight: bolder;
+}
+
+.pricing-item:hover {
+  box-shadow: 0 5px 20px black;
+}
 
 /* Categorias
 --------------------------------------------------------- */
 #categorias {
   background-color: #d3d3d3;
+}
+
+/* Publicidad
+--------------------------------------------------------- */
+#publicitat img {
+  width: 100%;
+  border: 10px solid black;
 }
 
 /* Footer 
@@ -237,15 +260,16 @@ section .section-title {
 
 #footer ul.social li a i {
   margin-right: 5px;
-  font-size: 25px;
+  font-size: 30px;
   -webkit-transition: 0.5s all ease;
   -moz-transition: 0.5s all ease;
   transition: 0.5s all ease;
 }
 
 #footer ul.social li:hover a i {
-  font-size: 50px;
+  font-size: 25px;
   margin-top: -10px;
+  /* filter: blur(1px); */
 }
 
 #footer ul.social li a,
@@ -286,7 +310,10 @@ section .section-title {
     margin-bottom: 10px;
   }
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> adaf922401aac24b395c5b09c0c4a79696de3dcc
+/* No applicable
+-----------------------------------------------------------------*/
+
+/* body {
+  background: linear-gradient(to right, #0a346d, #1598ef)
+} */
