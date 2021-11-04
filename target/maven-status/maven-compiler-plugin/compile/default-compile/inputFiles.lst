@@ -1,2 +1,10 @@
-c:\Users\ngall\Desktop\DAW\21-22\M12 Projecte\ProjecteFinalDaw\src\main\java\launch\Main.java
-c:\Users\ngall\Desktop\DAW\21-22\M12 Projecte\ProjecteFinalDaw\src\main\java\servlet\HelloServlet.java
+C:\Users\ngall\Desktop\DAW\21-22\M12 Projecte\ProjecteFinalDaw\src\main\java\Usuari\UsuariController.java
+C:\Users\ngall\Desktop\DAW\21-22\M12 Projecte\ProjecteFinalDaw\src\main\java\Config\HibernateConfiguration.java
+C:\Users\ngall\Desktop\DAW\21-22\M12 Projecte\ProjecteFinalDaw\src\main\java\Usuari\UsuariDAOJPA.java
+C:\Users\ngall\Desktop\DAW\21-22\M12 Projecte\ProjecteFinalDaw\src\main\java\Usuari\Usuari.java
+C:\Users\ngall\Desktop\DAW\21-22\M12 Projecte\ProjecteFinalDaw\src\main\java\Usuari\UsuariDAO.java
+C:\Users\ngall\Desktop\DAW\21-22\M12 Projecte\ProjecteFinalDaw\src\main\java\Config\DAOConfig.java
+C:\Users\ngall\Desktop\DAW\21-22\M12 Projecte\ProjecteFinalDaw\src\main\java\Usuari\UsuariHibernateDAO.java
+C:\Users\ngall\Desktop\DAW\21-22\M12 Projecte\ProjecteFinalDaw\src\main\java\Config\HibernatePostgreSQLConfiguration.java
+C:\Users\ngall\Desktop\DAW\21-22\M12 Projecte\ProjecteFinalDaw\src\main\java\launch\Main.java
+C:\Users\ngall\Desktop\DAW\21-22\M12 Projecte\ProjecteFinalDaw\src\main\java\servlet\HelloServlet.java
