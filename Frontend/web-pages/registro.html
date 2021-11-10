@@ -73,7 +73,7 @@
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
                 <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Registro</h4>
-                <form>
+                <!-- <form>
                   <div class="form-row">
                     <div class="form-group col-md-12"> <label for="inputName">Nombre</label> <input type="text" class="form-control" id="inputEmail4"
                         placeholder="Escriba su nombre" required=""> </div>
@@ -130,76 +130,75 @@
                         type="submit">Regístrate</button>
                     </div>
                   </div>
-                </form>
+                </form> -->
 
               </div>
               <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
                 <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Registro entrenador/a</h4>
-                <form>
-                  <div class="form-row">
-                    <div class="form-group col-md-12"> <label for="inputName">Nombre</label> <input type="text" class="form-control" id="inputEmail4"
-                        placeholder="Escriba su nombre" required=""> </div>
-                    <div class="form-group col-md-12"> <label for="inputName">Primer apellido</label> <input type="text" class="form-control"
-                        id="inputPassword4" placeholder="Escriba su primer apellido" required=""> </div>
-                    <div class="form-group col-md-12"> <label for="inputName">Segundo apellido</label> <input type="text" class="form-control"
-                        id="inputPassword4" placeholder="Escriba su segundo apellido" required=""> </div>
-                  </div>
-                  <div class="form-row">
-                    <div class="form-group col-md-12"> <label for="inputName">Correo electrónico</label> <input type="email" class="form-control"
-                        id="inputEmail4" placeholder="Escriba su correo electrónico" required=""> </div>
-
-                    <div class="form-group col-md-12"> <label for="inputName">DNI:</label> <input type="text" class="form-control" id="inputEmail4"
-                        name="dni" placeholder="Introduzca su DNI" pattern="[0-9]{8}[A-Za-z]{1}" title="Debe poner 8 números y una letra" required>
+                <form id="form">
+                    <div class="form-row">
+                      <div class="form-group col-md-12"> <label for="nom">Nombre</label> <input type="text" class="form-control" id="nom"
+                          placeholder="Escriba su nombre" name="nom" required=""> </div>
+                      <div class="form-group col-md-12"> <label for="cognom1">Primer apellido</label> <input type="text" class="form-control"
+                          id="cognom1" placeholder="Escriba su primer apellido" name="cognom1" required=""> </div>
+                      <div class="form-group col-md-12"> <label for="cognom2">Segundo apellido</label> <input type="text" class="form-control"
+                          id="cognom2" placeholder="Escriba su segundo apellido" name="cognom2" required=""> </div>
                     </div>
-
-                    <div class="form-group col-md-12"> <label for="inputName">Teléfono de contacto</label> <input type="tel" class="form-control"
-                        id="phone" name="phone" placeholder="777777777" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" minlength="7" maxlength="7" required>
+                    <div class="form-row">
+                      <div class="form-group col-md-12"> <label for="email">Correo electrónico</label> <input type="email" class="form-control"
+                          id="email" placeholder="Escriba su correo electrónico" name="email" required=""> </div>
+                
+                      <div class="form-group col-md-12"> <label for="dni">DNI:</label> <input type="text" class="form-control" id="dni"
+                          name="dni" placeholder="Introduzca su DNI" pattern="[0-9]{8}[A-Za-z]{1}" title="Debe poner 8 números y una letra" required>
+                      </div>
+                
+                      <div class="form-group col-md-12"> <label for="telefon">Teléfono de contacto</label> <input type="tel" class="form-control"
+                          id="telefon" name="telefon" placeholder="777-777-777" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" minlength="7" maxlength="11" required>
+                      </div>
+                
+                      <div class="form-group col-md-12"> <label for="adreca">Dirección</label> <input type="text" class="form-control"
+                          id="adreca" placeholder="Calle Número Piso" name="adreca" required="" size="100"> </div>
+                
+                      <div class="form-group col-md-12"> <label for="codpost">Código Postal</label> <input type="number" class="form-control"
+                          id="codpost" placeholder="Escriba el código postal, ejemplo: 28030" name="codpost" minlength="5" required=""> </div>
+                
+                      <div class="form-group col-md-12"> <label for="poblacio">Población</label> <input type="text" class="form-control"
+                          id="poblacio" placeholder="Escriba la población" name="poblacio" required=""> </div>
+                
+                      <div class="form-group col-md-12"> <label for="provincia">Provincia</label> <input type="text" class="form-control"
+                          id="provincia" placeholder="Escriba la provincia" name="provincia" required=""> </div>
+                
+                      <div class="form-group col-md-12"> <label for="password">Contraseña</label> <input type="password" class="form-control"
+                          id="password" placeholder="Escriba su Contraseña" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                          title="Ha de tener uno o más números, una letra mayúscula, una letra minúscula y 8 o más caracteres."> </div>
                     </div>
-
-                    <div class="form-group col-md-12"> <label for="inputName">Dirección</label> <input type="text" class="form-control"
-                        id="inputEmail4" placeholder="Calle Número Piso" required="" size="100"> </div>
-
-                    <div class="form-group col-md-12"> <label for="inputName">Código Postal</label> <input type="number" class="form-control"
-                        id="inputEmail4" placeholder="Escriba el código postal, ejemplo: 28030" minlength="5" required=""> </div>
-
-                    <div class="form-group col-md-12"> <label for="inputName">Población</label> <input type="text" class="form-control"
-                        id="inputEmail4" placeholder="Escriba la población" required=""> </div>
-
-                    <div class="form-group col-md-12"> <label for="inputName">Provincia</label> <input type="text" class="form-control"
-                        id="inputEmail4" placeholder="Escriba la privincia" required=""> </div>
-
-                    <div class="form-group col-md-12"> <label for="inputName">Contraseña</label> <input type="password" class="form-control"
-                        id="inputPassword4" placeholder="Escriba su Contraseña" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                        title="Ha de tener uno o más números, una letra mayúscula, una letra minúscula y 8 o más caracteres."> </div>
-                  </div>
-                  <div class="form-row">
-                    <div class="form-group col-md-12"> <label for="inputName">Confirme la contraseña</label> <input type="password"
-                        class="form-control" id="inputPassword4" placeholder="Escriba otra vez su contraseña" required
-                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                        title="Ha de tener uno o más números, una letra mayúscula, una letra minúscula y 8 o más caracteres."> </div>
-                  </div>
-                  <div class="form-group form-row mt-5">
-                    <div class="col-md-12"> <label class="custom-control custom-checkbox checkbox-lg"> <input type="checkbox"
-                          class="custom-control-input" id="customCheck1">
-                        <div class="custom-control-label" for="customCheck1">Marcando esta casilla certifico que soy <span class="lead">
-                            entrenador/a</span>.</div>
-                      </label> </div>
-                  </div>
-                  <div class="form-group form-row mb-5">
-                    <div class="col-md-12"> <label class="custom-control custom-checkbox checkbox-lg"> <input type="checkbox"
-                          class="custom-control-input" id="customCheck1">
-                        <div class="custom-control-label" for="customCheck1">Acepto los <a href="#" target="_blank">terminos y condiciones.</a></div>
-                      </label> </div>
-                  </div>
-                  <hr class="mt-3 mb-4">
-                  <div class="col-12">
-                    <div class="d-flex flex-wrap justify-content-between align-items-center">
-                      <div class="custom-checkbox d-block"> <a href="../web-pages/login.html" class="nav-link-inline font-size-sm">Ya
-                          tienes registro hecho? Inicia sesión</a> </div> <button class="btn btn-dark mt-3 mt-sm-0"
-                        type="submit">Regístrate</button>
+                    <div class="form-row">
+                      <div class="form-group col-md-12"> <label for="passwordRep">Confirme la contraseña</label> <input type="password"
+                          class="form-control" id="passwordRep" placeholder="Escriba otra vez su contraseña" name="passwordRep" required
+                          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                          title="Ha de tener uno o más números, una letra mayúscula, una letra minúscula y 8 o más caracteres."> </div>
                     </div>
-                  </div>
-                </form>
+                    <div class="form-group form-row mb-5 mt-5">
+                      <div class="col-md-12"> <label class="custom-control custom-checkbox checkbox-lg"> <input type="checkbox"
+                            class="custom-control-input" id="customCheck1">
+                          <div class="custom-control-label" for="customCheck1">Acepto los <a href="#" target="_blank">terminos y condiciones.</a></div>
+                        </label> </div>
+                    </div>
+                    <div class="form-group form-row mb-5 mt-5">
+                        <div class="col-md-12"> <label class="custom-control custom-checkbox checkbox-lg"> <input type="checkbox"
+                              class="custom-control-input" id="isentrenador">
+                            <div class="custom-control-label" for="isentrenador">Es entrenador?</div>
+                          </label> </div>
+                      </div>
+                    <hr class="mt-3 mb-4">
+                    <div class="col-12">
+                      <div class="d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="custom-checkbox d-block"> <a href="../web-pages/login.html" class="nav-link-inline font-size-sm">Ya
+                            tienes registro hecho? Inicia sesión</a> </div> <button class="btn btn-dark mt-3 mt-sm-0"
+                          type="submit">Regístrate</button>
+                      </div>
+                    </div>
+                  </form>
               </div>
             </div>
           </div>
@@ -266,7 +265,97 @@
       crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+    <script>
+        // var loading = document.getElementById('loading');
+        // var mensaje = document.getElementById('mensaje');
+        
+        // var boton = document.getElementById('carga_ajax');
+        
+        let nombre = document.getElementById('inputNombre');
+        let apellido1 = document.getElementById('inputSurname1');
+        let apellido2 = document.getElementById('inputSurname2');
+        let email = document.getElementById('inputEmail4');
+        let dni = document.getElementById('inputDNI');
+        let telefono = document.getElementById('phone');
+        let direccion = document.getElementById('inputAdress');
+        let codigoPostal = document.getElementById('inputCP');
+        let poblacion = document.getElementById('inputPoblacion');
+        let provincia = document.getElementById('inputProvincia');
+        let contrasenya = document.getElementById('inputPassword1');
+        let repContrasenya = document.getElementById('inputPassword2');
+        let aceptoCondiciones = document.getElementById('customCheck1');
+        
+        // const axios = require('axios');
+
+        const d = document,
+            $form = d.getElementById("form").content;
+        const getAll = async () => {
+            
+            try{
+                let res = await axios.get("postgres://ntwoicfbbesnkk:cf5b6ffd2759195656f6628f1c658f61535b3a3fe459598b0813f7a8b11dd49b@ec2-34-250-19-18.eu-west-1.compute.amazonaws.com:5432/dc2en4q76f81uc"),
+                    json = await res.data;
+                
+                console.log(json);
+                      
+                json.forEach(el => {
+                    $form.nombre.textContent = el.nombre;
+                    $form.apellido1.textContent = el.apellido1;
+                    $form.apellido2.textContent = el.apellido2;
+                    $form.email.textContent = el.email;
+                    $form.dni.textContent = el.dni;
+                    $form.telefono.textContent = el.telefono;
+                    $form.direccion.textContent = el.direccion;
+                    $form.codigoPostal.textContent = el.codigoPostal;
+                    $form.poblacion.textContent = el.poblacion;
+                    $form.provincia.textContent = el.provincia;
+                    $form.contrasenya.textContent = el.contrasenya;
+                    
+                });
+        
+            } catch (err){
+                let message = err.statusText || "Ocurrió un error";
+                console.log(message);
+            }
+        }
+        
+        d.addEventListener("DOMContentLoaded", getAll);
+        
+        d.addEventListener("submit", async e => {
+            if (e.target === $form) {
+                e.preventDefault();
+                  try {
+                    let options = {
+                      method: "POST",
+                      headers: {
+                        "Content-type": "application/json; charset=utf-8"
+                      },
+                      data: JSON.stringify({
+                        nombre: e.target.nombre.value,
+                        apellido1: e.target.apellido1.value,
+                        apellido2: e.target.apellido2.value,
+                        email: e.target.email.value,
+                        dni: e.target.dni.value,
+                        telefono: e.target.telefono.value,
+                        direccion: e.target.direccion.value,
+                        codigoPostal: e.target.codigoPostal.value,
+                        poblacion: e.target.poblacion.value,
+                        provincia: e.target.provincia.value,
+                        contrasenya: e.target.contrasenya.value
+                      })
+                    },
+                      res = await axios("url", options),
+                      json = await res.data;
+        
+                    location.reload();
+                  } catch (err) {
+                    let message = err.statusText || "Ocurrió un error";
+                    $form.insertAdjacentHTML("afterend", `<p><b>Error ${err.status}: ${message}</b></p>`);
+                  }
+                }
+        });
+        </script>
 
   </body>
 
