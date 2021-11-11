@@ -1,0 +1,9 @@
+config\WebConfig.class
+dao\UsuariDAO.class
+controller\UsuariController.class
+config\AppConfig.class
+service\UsuariService.class
+service\UsuariServiceImp.class
+config\TirBaGoInitializer.class
+model\Usuari.class
+dao\UsuariDAOImp.class
