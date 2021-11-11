@@ -25,8 +25,28 @@ const camps = {
 	codpost: false,
 	poblacio: false,
 	provincia: false,
-	password: false
+	password: false,
+	isentrenador: false,
+	active: false
 }
+
+const campsValor = {
+	nom: "",
+	cognom1: "",
+	cognom2: "",
+	email: "",
+	dni: "",
+	telefon: "",
+	adreca: "",
+	codpost: "",
+	poblacio: "",
+	provincia: "",
+	password: "",
+	isentrenador: "",
+	active: false
+
+}
+
 //Comrpovem en quin imput està per aplicar la funció de validació
 const validarformulari = (e) => {
 	switch (e.target.name) {
@@ -44,7 +64,7 @@ const validarformulari = (e) => {
 		break;
 		case "dni":
 			validarCamp(expresions.text, e.target, 'dni');
-            validarDNI(e.target.name);
+			validarDNI(e.target.name);
 		break;
 		case "telefon":
 			validarCamp(expresions.telefon, e.target, 'telefon');
@@ -80,6 +100,8 @@ const validarCamp = (expresion, input, camp) => {
 		document.getElementById(`${camp}`).classList.add('formulari__grup-correcto');
         document.querySelector(`#${camp} + .formulari__input-error`).classList.remove('formulari__input-error-activo');
 		camps[camp] = true;
+		campsValor[camp] = input.value;
+		
 	} else {
 		document.getElementById(`${camp}`).classList.add('formulari__grup-incorrecto');
 		document.getElementById(`${camp}`).classList.remove('formulari__grup-correcto');
@@ -109,6 +131,7 @@ function comprovarDni(dni){
 		document.getElementById(`dni`).classList.add('formulari__grup-correcto');
 		document.querySelector(`#dni + .formulari__input-error`).classList.remove('formulari__input-error-activo');
 		camps['dni'] = true;
+		campsValor['dni'] = dni;
     } else {
         document.getElementById(`dni`).classList.add('formulari__grup-incorrecto');
 		document.getElementById(`dni`).classList.remove('formulari__grup-correcto');
@@ -144,7 +167,16 @@ formulario.addEventListener('submit', (e) => {
 
 	const aceptarTerminos = document.getElementById('customCheck1');
 	if(camps.nom && camps.cognom1 && camps.cognom2 && camps.email && camps.dni && camps.telefon && camps.adreca && camps.codpost && camps.poblacio && camps.provincia && camps.telefon && aceptarTerminos.checked ){
-        SendDataRegister(camps);
+        console.log(campsValor);
+
+		const esEntrenador = document.getElementById('isentrenador');
+		if (esEntrenador.checked){
+			campsValor['isentrenador']=true;
+		} else {
+			campsValor['isentrenador']=false;
+		}
+
+		SendDataRegister(campsValor);
 
         formulario.reset();
 		document.getElementById('formulari__mensaje-exito').classList.add('formulari__mensaje-exito-activo');
@@ -162,8 +194,9 @@ formulario.addEventListener('submit', (e) => {
 
 //Enviem de forma asincrona per POST l'objecte camps que conté la informació entrada
 async function SendDataRegister(camps){
-    console.log(camps);
-    const URL = "API"
+	
+    // console.log(camps);
+    const URL = "https://Localhost:8080/ProvaProjecteDAW/api/"
     try {
         
         let options = {
@@ -181,8 +214,8 @@ async function SendDataRegister(camps){
 
         location.reload();
       } catch (err) {
-        let message = err.statusText || "Ocurrió un error";
-        $form.insertAdjacentHTML("afterend", `<p><b>Error ${err.status}: ${message}</b></p>`);
+        let message = err.statusText || "Ocurrió un error en el registro";
+        alert('Error' + ': ' + message);
       }
 }
 
