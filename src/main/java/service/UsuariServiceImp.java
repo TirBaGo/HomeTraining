@@ -63,6 +63,8 @@ public class UsuariServiceImp implements UsuariService{
         return usuariDAO.cercarTotsElsUsuaris();
     }
 
+
+
   
 }
 

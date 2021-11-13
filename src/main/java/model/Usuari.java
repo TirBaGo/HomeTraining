@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -22,9 +24,17 @@ public class Usuari implements Serializable{
      
     @NotNull
     @Size(max = 9)
-    @Column(name = "dni")
+    @Column(name = "id_usuari")
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id_usuari;
+    
+    @NotNull
+    @Size(max = 9)
+    @Column(name = "dni")
     private String dni;
+
+   
     
     @NotNull
     @Size(max = 50)
@@ -179,6 +189,15 @@ public class Usuari implements Serializable{
     public void setActive(boolean active) {
         this.active = active;
     }
+     public int getId_usuari() {
+        return id_usuari;
+    }
+
+    public void setId_usuari(int id_usuari) {
+        this.id_usuari = id_usuari;
+    }
+
+    
 
   
 }

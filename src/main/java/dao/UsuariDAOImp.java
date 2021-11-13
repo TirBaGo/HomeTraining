@@ -31,7 +31,8 @@ public class UsuariDAOImp implements UsuariDAO{
 
     @Override
     public Usuari editarUsuari(Usuari usuari) {
-        return (Usuari) getSession().merge(usuari);
+        getSession().update(usuari);
+        return usuari;
     }
 
     @Override

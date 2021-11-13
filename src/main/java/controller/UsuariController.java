@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.List;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import model.Usuari;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMethod;
 import service.UsuariService;
 
@@ -24,7 +26,7 @@ import service.UsuariService;
 @RestController
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 @RequestMapping("/api/usuari")
-public class UsuariController {
+public class UsuariController  {
 
     
    @Autowired
@@ -64,21 +66,25 @@ public class UsuariController {
         return usuaris;  
     }
     
-     @PostMapping("/addUsuari")
-    public void  crearUsuari( Usuari usuari){
+     @RequestMapping(value="/addUsuari", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
+    public void  crearUsuari(@RequestBody @Valid Usuari usuari){
         usuariService.crearUsuari(usuari);
         
           
     }
       
     @PutMapping("/modifyUsuari")
-    public Usuari editarUsuari( Usuari usuari) {
-        usuariService.editarUsuari(usuari);
-        return usuari;
+    public Usuari editarUsuari(@RequestBody Usuari usuari) {
+        Usuari usuariR = usuariService.editarUsuari(usuari);
+        
+        return usuariR;
     }
 
-    @DeleteMapping("/deleteUser")
-    public void eliminarUsuari(Usuari usuari) {
-        usuariService.eliminarUsuari(usuari);
+    @DeleteMapping("/deleteUsuari")
+    public void eliminarUsuari(@RequestBody Usuari usuari) {
+        
+            usuariService.eliminarUsuari(usuari);
+        
+        
     }
 }
