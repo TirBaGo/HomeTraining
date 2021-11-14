@@ -25,16 +25,12 @@ import javax.validation.constraints.Size;
 public class Login implements Serializable{
      private static final long serialVersionUID = 1L;
     
-    @NotNull
-    @Size(max = 9)
-    @Column(name = "id_username")
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_username;
+
      
     @NotNull
     @Size(max = 20)
     @Column(name = "username")
+    @Id
     private String username;
 
 
@@ -52,13 +48,7 @@ public class Login implements Serializable{
     public Login() {
     }
     
-    public int getId_username() {
-        return id_username;
-    }
 
-    public void setId_username(int id_username) {
-        this.id_username = id_username;
-    }
 
     public String getUsername() {
         return username;
