@@ -68,9 +68,7 @@ public class UsuariController  {
     
      @RequestMapping(value="/addUsuari", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
     public void  crearUsuari(@RequestBody @Valid Usuari usuari){
-        usuariService.crearUsuari(usuari);
-        
-          
+        usuariService.crearUsuari(usuari);   
     }
       
     @PutMapping("/modifyUsuari")
@@ -83,8 +81,6 @@ public class UsuariController  {
     @DeleteMapping("/deleteUsuari")
     public void eliminarUsuari(@RequestBody Usuari usuari) {
         
-            usuariService.eliminarUsuari(usuari);
-        
-        
+        usuariService.eliminarUsuari(usuari);
     }
 }
