@@ -34,7 +34,8 @@ public class LoginDAOImp implements LoginDAO{
 
     @Override
     public Login editarLogin(Login login) {
-        return (Login) getSession().merge(login);
+        getSession().update(login);
+        return login ;
     }
 
     @Override

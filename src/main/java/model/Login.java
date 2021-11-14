@@ -8,6 +8,8 @@ package model;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -16,18 +18,26 @@ import javax.validation.constraints.Size;
 /**
  *
  * @author Nerea Gallardo
- * @version 1.0
+ * @version 2.0
  */
 @Entity
 @Table(name = "login")
 public class Login implements Serializable{
      private static final long serialVersionUID = 1L;
+    
+    @NotNull
+    @Size(max = 9)
+    @Column(name = "id_username")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id_username;
      
     @NotNull
     @Size(max = 20)
     @Column(name = "username")
-    @Id
     private String username;
+
+
     
     @NotNull
     @Size(max = 20)
@@ -40,6 +50,14 @@ public class Login implements Serializable{
     private String dni;
 
     public Login() {
+    }
+    
+    public int getId_username() {
+        return id_username;
+    }
+
+    public void setId_username(int id_username) {
+        this.id_username = id_username;
     }
 
     public String getUsername() {
