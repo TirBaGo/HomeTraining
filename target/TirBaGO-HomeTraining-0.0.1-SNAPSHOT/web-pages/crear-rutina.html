@@ -60,30 +60,95 @@
 
     <main>
 
-      <section id="iniciarSesion" class="container">
-        <div class="limit">
-          <div class="login-container">
-            <div class="bb-login">
-              <form class="bb-form validate-form"> <span class="bb-form-title p-b-26 mb-5"> Inicio de sesión </span><span class="bb-form-title p-b-4">
-                  <i class="mdi mdi-symfony"></i> </span>
-                <div class="form-group col-md-12 validate-input" data-validate="Valid email is: a@b.c> <label for=" inputName">Email</label> <input
-                    type="email" class="form-control" id="inputEmail4" placeholder="Inicie session con e-mail" required=""> </div>
-
-                <div class="form-group col-md-12"> <label for="inputName">Contraseña</label><span class="btn-show-pass"> <i
-                      class="bi bi-eye-fill"></i>
-                  </span> <input type="password" class="form-control" id="inputPassword4" placeholder="Escriba su Contraseña" required
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    title="Ha de tener uno o más números, una letra mayúscula, una letra minúscula y 8 o más caracteres."> </div>
-                <div class="login-container-form-btn">
-                  <button class="btn btn-dark mt-5"> Iniciar sesión </button>
-                </div>
-                <div class="text-center p-t-115"> <span class="mr-2"> Aún no tiene registro realizado? </span> <a href="../web-pages/registro.html">
-                    Regístrate </a> </div>
-              </form>
-            </div>
+      <section id="crear-rutina" class="container">
+        <h2 class="text-center font-weight-bolder mb-5 pb-3">Crear una Rutina</h2>
+        <div class="row ">
+          <div class="col-12 mb-5 col-md-6">
+            <label for="">Categoría</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option selected>Escoge una categoria</option>
+              <option>Biceps</option>
+              <option>Triceps</option>
+              <option>Pectorales</option>
+              <option>Hombros</option>
+              <option>Gluteos</option>
+              <option>Piernas</option>
+              <option>Gemelos</option>
+              <option>Abdominales</option>
+              <option>Trapecio</option>
+              <option>Antebrazo</option>
+            </select>
+          </div>
+          <div class="form-group col-12 col-md-4 offset-2">
+            <label for="exampleFormControlFile1">Agrega un vídeo</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile2">
           </div>
         </div>
+
+        <div class="row">
+          <div class="col-12 mb-5 col-md-6">
+            <label for="">Autor</label>
+            <select class="form-control" id="exampleFormControlSelect3">
+              <option selected>Escoge un entrenador</option>
+              <option>Personal trainer 1</option>
+              <option>Personal trainer 2</option>
+              <option>Personal trainer 3</option>
+              <option>Personal trainer 4</option>
+            </select>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col-12 mb-5 col-md-6">
+            <label for="">Equipamiento</label>
+            <select class="form-control" id="exampleFormControlSelect4">
+              <option selected>Escoge el equipo que vayas a usar</option>
+              <option>Mancuernas</option>
+              <option>Barra</option>
+              <option>Silla</option>
+              <option>Bandas elásticas</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 mb-5 col-md-6">
+            <label for="">Nivel</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option selected>Escoge el equipo que vayas a usar</option>
+              <option>Mancuernas</option>
+              <option>Barra</option>
+              <option>Silla</option>
+              <option>Bandas elásticas</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 mb-5 col-md-6">
+            <label for="">Duración</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option selected>Escoge el equipo que vayas a usar</option>
+              <option>Mancuernas</option>
+              <option>Barra</option>
+              <option>Silla</option>
+              <option>Bandas elásticas</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row mb-5">
+          <div class="col-12 col-md-8">
+            <label for="exampleFormControlTextarea1">Escribe una descripción de la rutina</label>
+            <textarea class="form-control col-12" id="exampleFormControlTextarea1" rows="3" placeholder="Escribe aquí la descripción"></textarea>
+          </div>
+          <div class="col-12 col-md-4">
+            <label for="exampleFormControlFile1">Adjuntar imagen</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile2">
+          </div>
+        </div>
+        <button type="button" class="btn btn-dark btn-lg btn-block">Guardar Rutina</button>
+
       </section>
 
     </main>

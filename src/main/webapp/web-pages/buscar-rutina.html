@@ -60,30 +60,78 @@
 
     <main>
 
-      <section id="iniciarSesion" class="container">
-        <div class="limit">
-          <div class="login-container">
-            <div class="bb-login">
-              <form class="bb-form validate-form"> <span class="bb-form-title p-b-26 mb-5"> Inicio de sesión </span><span class="bb-form-title p-b-4">
-                  <i class="mdi mdi-symfony"></i> </span>
-                <div class="form-group col-md-12 validate-input" data-validate="Valid email is: a@b.c> <label for=" inputName">Email</label> <input
-                    type="email" class="form-control" id="inputEmail4" placeholder="Inicie session con e-mail" required=""> </div>
+      <section id="crear-rutina" class="container">
+        <h2 class="text-center font-weight-bolder mb-5 pb-3">Selecciona un programa</h2>
+        <div class="row ">
+          <div class="col-12 mb-5 col-md-6">
+            <label for="">Categoría</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option selected>Selecciona una categoria</option>
+              <option>Biceps</option>
+              <option>Triceps</option>
+              <option>Pectorales</option>
+              <option>Hombros</option>
+              <option>Gluteos</option>
+              <option>Piernas</option>
+              <option>Gemelos</option>
+              <option>Abdominales</option>
+              <option>Trapecio</option>
+              <option>Antebrazo</option>
+            </select>
+          </div>
+          <div class="col-12 mb-5 col-md-6">
+            <label for="">Autor</label>
+            <select class="form-control" id="exampleFormControlSelect3">
+              <option selected>Selecciona un entrenador</option>
+              <option>Personal trainer 1</option>
+              <option>Personal trainer 2</option>
+              <option>Personal trainer 3</option>
+              <option>Personal trainer 4</option>
+            </select>
+          </div>
+          <div class="col-12 mb-5 col-md-6">
+            <label for="">Equipamiento</label>
+            <select class="form-control" id="exampleFormControlSelect4">
+              <option selected>Selecciona el equipo que vayas a usar</option>
+              <option>Mancuernas</option>
+              <option>Barra</option>
+              <option>Silla</option>
+              <option>Bandas elásticas</option>
+            </select>
+          </div>
+          <div class="col-12 mb-5 col-md-6">
+            <label for="">Nivel</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option selected>Selecciona el nivel</option>
+              <option>Principiante</option>
+              <option>Intermedio</option>
+              <option>Avanzado</option>
+            </select>
+          </div>
+          <div class="col-12 mb-5 col-md-6">
+            <label for="">Duración</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option selected>Selecciona el tiempo de duración del programa</option>
+              <option>15 minutos</option>
+              <option>25 minutos</option>
+              <option>30 minutos</option>
+              <option>45 minutos</option>
+              <option>1 hora</option>
+            </select>
+          </div>
 
-                <div class="form-group col-md-12"> <label for="inputName">Contraseña</label><span class="btn-show-pass"> <i
-                      class="bi bi-eye-fill"></i>
-                  </span> <input type="password" class="form-control" id="inputPassword4" placeholder="Escriba su Contraseña" required
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    title="Ha de tener uno o más números, una letra mayúscula, una letra minúscula y 8 o más caracteres."> </div>
-                <div class="login-container-form-btn">
-                  <button class="btn btn-dark mt-5"> Iniciar sesión </button>
-                </div>
-                <div class="text-center p-t-115"> <span class="mr-2"> Aún no tiene registro realizado? </span> <a href="../web-pages/registro.html">
-                    Regístrate </a> </div>
-              </form>
-            </div>
+        </div>
+
+        <!-- Programas -->
+        <div class="rutinas-container">
+          <div class="mensaje-error">
+            <p>Programa no encontrado con estos criterios de búsqueda</p>
+          </div>
+          <div class="rutinas-container__display">
           </div>
         </div>
-        </div>
+        <!-- ./Programas -->
+
       </section>
 
     </main>
