@@ -7,7 +7,9 @@ service\BugServiceImp.class
 service\LoginService.class
 dao\QueixesDAO.class
 service\RutinaService.class
+dao\DubteDAOImp.class
 controller\LoginController.class
+service\DubteService.class
 dao\ModalitatDAO.class
 service\ImatgesRutinaServiceImp.class
 model\Accessori.class
@@ -19,12 +21,13 @@ service\LoginServiceImp.class
 dao\ImatgesRutinaDAOImp.class
 config\AppConfig.class
 dao\LoginDAO.class
-dao\AccessoriDAOImp.class
 service\ModalitatServiceImp.class
+dao\AccessoriDAOImp.class
 dao\UsuariDAOImp.class
 dao\UsuariDAO.class
 model\Usuari.class
 model\ImatgesRutina.class
+service\DubteServiceImp.class
 model\Bug.class
 controller\BugController.class
 service\UsuariService.class
@@ -32,6 +35,7 @@ service\AccessoriServiceImp.class
 service\RutinaServiceImp.class
 dao\BugDAOImp.class
 config\WebConfig.class
+model\Dubte.class
 controller\UsuariController.class
 controller\ModalitatController.class
 service\BugService.class
@@ -45,7 +49,9 @@ dao\RutinaDAOImp.class
 model\Rutina.class
 dao\AccessoriDAO.class
 dao\QueixesDAOImp.class
+dao\DubteDAO.class
 service\ImatgesRutinaService.class
+controller\DubteController.class
 service\QueixesServiceImp.class
 dao\ImatgesRutinaDAO.class
 model\Login.class
