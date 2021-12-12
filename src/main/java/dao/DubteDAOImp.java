@@ -73,7 +73,7 @@ public class DubteDAOImp implements DubteDAO{
         return (List<Dubte>) criteria.list();
     }
     
-        private Session getSession(){
+    private Session getSession(){
         return sessionFactory.getCurrentSession();
     }
     
