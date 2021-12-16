@@ -14,6 +14,7 @@
 // variables de només lectura
 const formulario = document.getElementById('form'); //captura el formulari d'html gràcies al seu id
 const inputs = document.querySelectorAll('#form input'); //captura tots els input del formulari i el guarda en un array
+const URLBase = 'http://127.0.0.1:5500/Frontend/web-pages';
 
 const expresions = {
 	
@@ -102,9 +103,9 @@ const validarformulari = (e) => {
 		case "passwordRep":
 			validarPassword2();
 		break;
-
-	}
+		}
 }
+
 //Validem els camps i afegim una classe o la treiem per mostrar el missatge d'error si hi ha
 const validarCamp = (expresion, input, camp) => {
     
@@ -217,7 +218,7 @@ formulario.addEventListener('submit', (e) => {
 
 		//Cridem diferents funcions per enviar les dades a la taula usuaris i login 
 		SendDataRegister(campsValor);
-		SendDataLogin(campsValor);
+		// SendDataLogin(campsValor);
 
         // Afegim una informació conforme el formulari ha estat omplert correctament
 		document.getElementById('formulari__mensaje-exito').classList.add('formulari__mensaje-exito-activo');
@@ -258,12 +259,14 @@ async function SendDataRegister(camps){
 		res = await axios(URL, options),
         json = await res.data;
         console.log(json);
-
+		
+		SendDataLogin(campsValor);
 
     } catch (err) {
         location.reload();
-		let message = err.statusText || "Ocurrió un error en el registro";
-        alert('Error' + ': ' + err);
+		let message = err.statusText || "Ocurrió un error en el registro registro";
+        console.log(err)
+		alert('Error' + ': ' + err);
       }
 }
 
@@ -302,12 +305,16 @@ async function SendDataLogin(camps){
         },
 		res = await axios(URL, options),
 		json = await res.data;
+		alert('Usuari registrat')
+		window.location.replace(URLBase+"/login.html")
+
 
     } catch (err) {
 		//la resposta es diferent de 200 i s'ha produit un error en el login d'usuari i surt un alert informant
         location.reload();
-		let message = err.statusText || "S'ha produit un error en el registre";
-        alert(message);
+		let message = err.statusText || "S'ha produit un error en el registre login";
+		console.log(err)
+        alert(err);
 		
       }
 }

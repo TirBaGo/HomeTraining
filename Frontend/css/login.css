@@ -337,3 +337,72 @@ iframe {
     opacity: 1;
   }
 }
+
+/* Codigo añadido por Ricardo */
+
+.formulari__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulari__input-error-activo {
+	display: block;
+}
+
+.formulari__checkbox {
+	margin-right: 10px;
+}
+
+.formulari__grup-terminos, 
+.formulari__mensaje,
+.formulari__grup-btn-enviar {
+	grid-column: span 2;
+}
+
+.formulari__mensaje {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulari__mensaje-activo {
+	display: block;
+}
+
+.formulari__mensaje p {
+	margin: 0;
+}
+
+
+.formulari__mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.formulari__mensaje-exito-activo {
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulari__grup-correcto {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulari__grup-incorrecto .formulari__label {
+	color: #bb2929;
+}
+
+.formulari__grupo-incorrecto {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulari__grup-incorrecto .formulari__input {
+	border: 3px solid #bb2929;
+}
