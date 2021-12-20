@@ -61,93 +61,95 @@
     <main>
 
       <section id="crear-rutina" class="container">
-        <div class="card-body">
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation"> <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab"
-                aria-controls="login" aria-selected="true" style="text-transform: uppercase;">Crear Rutina</a> </li>
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-              <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Crear Rutina</h4>
-              <form id="form">
-                <div class="row ">
-                  <div class="col-12 mb-5 col-md-6">
-                    <label for="">Categoría</label>
-                    <select class="form-control" id="categoria">
-                      <option selected>Escoge una categoria</option>
-                    </select>
-                  </div>
-                  <div class="form-group col-12 col-md-4 offset-2">
-                    <label for="exampleFormControlFile1">Agrega un vídeo</label>
-                    <input type="file" class="form-control-file" id="video">
-                  </div>
-                </div>
+          <div class="card signup_v4 mb-30">
+            <div class="card-body">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation"> <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab"
+                    aria-controls="login" aria-selected="true" style="text-transform: uppercase;">Crear Rutina</a> </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                  <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Crear Rutina</h4>
+                  <form id="form">
+                    <div class="row ">
+                      <div class="col-12 mb-5 col-md-6">
+                        <label for="">Categoría</label>
+                        <select class="form-control" id="categoria">
+                          <option selected>Escoge una categoria</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-12 col-md-4 offset-2">
+                        <label for="exampleFormControlFile1">Agrega un vídeo</label>
+                        <input type="file" class="form-control-file" id="video">
+                      </div>
+                    </div>
 
-                <div class="row">
-                  <div class="col-12 mb-5 col-md-6">
-                    <label for="">Equipamiento</label>
-                    <select class="form-control" id="accessori">
-                      <option selected>Escoge el equipo que vayas a usar</option>
-                    </select>
-                  </div>
-                </div>
+                    <div class="row">
+                      <div class="col-12 mb-5 col-md-6">
+                        <label for="">Equipamiento</label>
+                        <select class="form-control" id="accessori">
+                          <option selected>Escoge el equipo que vayas a usar</option>
+                        </select>
+                      </div>
+                    </div>
 
-                <div class="row">
-                  <div class="col-12 mb-5 col-md-6">
-                    <label for="">Nivel</label>
-                    <select class="form-control" id="nivell">
-                      <option selected>Selecciona el nivel</option>
-                      <option>Principiante</option>
-                      <option>Intermedio</option>
-                      <option>Avanzado</option>
-                    </select>
-                  </div>
-                </div>
+                    <div class="row">
+                      <div class="col-12 mb-5 col-md-6">
+                        <label for="">Nivel</label>
+                        <select class="form-control" id="nivell">
+                          <option selected>Selecciona el nivel</option>
+                          <option>Principiante</option>
+                          <option>Intermedio</option>
+                          <option>Avanzado</option>
+                        </select>
+                      </div>
+                    </div>
 
-                <div class="row">
-                  <div class="col-12 mb-5 col-md-6">
-                    <label for="">Duración</label>
-                    <select class="form-control" id="duracio">
-                      <option selected>Selecciona el tiempo de duración del programa(minutos)</option>
-                      <option>15</option>
-                      <option>25</option>
-                      <option>30</option>
-                      <option>45</option>
-                      <option>60</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-12 mb-5 col-md-6">
-                    <label for="">Preu</label>
-                        <select class="form-control" id="preu">
-                          <option selected>Selecciona el precio para la rutina</option>
-                          <option>20</option>
+                    <div class="row">
+                      <div class="col-12 mb-5 col-md-6">
+                        <label for="">Duración</label>
+                        <select class="form-control" id="duracio">
+                          <option selected>Selecciona el tiempo de duración del programa(minutos)</option>
+                          <option>15</option>
+                          <option>25</option>
                           <option>30</option>
-                          <option>40</option>
-                          <option>50</option>
+                          <option>45</option>
                           <option>60</option>
-                          <option>70</option>
-                    </select>
-                  </div>
-                </div>
+                        </select>
+                      </div>
+                    </div>
 
-                <div class="row mb-5">
-                  <div class="col-12 col-md-8">
-                    <label for="exampleFormControlTextarea1">Escribe una descripción de la rutina</label>
-                    <textarea class="form-control col-12" id="descripcio" rows="3" placeholder="Escribe aquí la descripción"></textarea>
-                  </div>
-                  <div class="col-12 col-md-4">
-                    <label for="exampleFormControlFile1">Adjuntar imagen</label>
-                    <input type="file" class="form-control-file" id="imatge">
-                  </div>
+                    <div class="row">
+                      <div class="col-12 mb-5 col-md-6">
+                        <label for="">Preu</label>
+                            <select class="form-control" id="preu">
+                              <option selected>Selecciona el precio para la rutina</option>
+                              <option>20</option>
+                              <option>30</option>
+                              <option>40</option>
+                              <option>50</option>
+                              <option>60</option>
+                              <option>70</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row mb-5">
+                      <div class="col-12 col-md-8">
+                        <label for="exampleFormControlTextarea1">Escribe una descripción de la rutina</label>
+                        <textarea class="form-control col-12" id="descripcio" rows="3" placeholder="Escribe aquí la descripción"></textarea>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        <label for="exampleFormControlFile1">Adjuntar imagen</label>
+                        <input type="file" class="form-control-file" id="imatge">
+                      </div>
+                    </div>
+                    <button type="submit" id="boton" class="btn btn-dark btn-lg btn-block">Guardar Rutina</button>
+                  </form>
                 </div>
-                <button type="submit" id="boton" class="btn btn-dark btn-lg btn-block">Guardar Rutina</button>
-              </form>
+              </div>
             </div>
           </div>
-        </div>
       </section>
 
     </main>
