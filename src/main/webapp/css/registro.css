@@ -1,0 +1,177 @@
+@import './index.css';
+
+#registro {
+  background-color: #f5f3f4;
+}
+
+body {
+  background-color: #f5f3f4;
+}
+.card {
+  border: 1px solid black;
+}
+
+.signup_v4 .social-area {
+  text-align: center;
+  padding-top: 14px;
+}
+
+.signup_v4 .social-area .text {
+  font-size: 17px;
+  font-weight: 400;
+  color: #143250;
+}
+
+.signup_v4 .social-area .title::before {
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.2);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 100%;
+  margin-left: 7px;
+}
+
+.signup_v4 .social-area .title::after {
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.2);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 100%;
+  margin-right: 7px;
+}
+
+.signup_v4 ul.social-links {
+  padding: 0;
+  margin: 0;
+}
+
+.signup_v4 .social-area .social-links li {
+  display: inline-block;
+}
+
+.signup_v4 .social-area .social-links li a i {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  line-height: 50px;
+  display: inline-block;
+  color: #fff;
+  margin: 0 5px;
+  -webkit-box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
+  box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
+}
+
+.signup_v4 .social-area .social-links li a i.fa-facebook-f {
+  background: #0069f7;
+}
+
+.signup_v4 .social-area .social-links li a i.fa-google-plus-g {
+  background: #d1062c;
+}
+
+.signup_v4 .nav-tabs .nav-link.active {
+  background: #e5383b;
+}
+
+.signup_v4 .nav-tabs .nav-link {
+  background: #660708;
+}
+
+.signup_v4 .nav-tabs .nav-link {
+  border: 0;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 0;
+  color: #fff;
+}
+
+.signup_v4 .nav-tabs li.nav-item {
+  width: 50%;
+}
+
+.signup_v4 .card-body {
+  padding: 0px;
+}
+
+.signup_v4 .card-body .tab-content {
+  padding: 0 1.25rem 1.75em;
+}
+/* Codigo añadido por Ricardo */
+
+.formulari__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulari__input-error-activo {
+	display: block;
+}
+
+.formulari__checkbox {
+	margin-right: 10px;
+}
+
+.formulari__grup-terminos, 
+.formulari__mensaje,
+.formulari__grup-btn-enviar {
+	grid-column: span 2;
+}
+
+.formulari__mensaje {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulari__mensaje-activo {
+	display: block;
+}
+
+.formulari__mensaje p {
+	margin: 0;
+}
+
+
+.formulari__mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.formulari__mensaje-exito-activo {
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulari__grup-correcto {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulari__grup-incorrecto .formulari__label {
+	color: #bb2929;
+}
+
+.formulari__grupo-incorrecto {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulari__grup-incorrecto .formulari__input {
+	border: 3px solid #bb2929;
+}
