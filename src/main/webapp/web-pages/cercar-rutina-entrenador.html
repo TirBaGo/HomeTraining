@@ -48,10 +48,10 @@
               <a class="nav-link mr-5 pr-5" href="#">Contacto</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contenido</a>
+                <a class="nav-link" id="datos" href="#">Contenido</a>
                <ul>
                 <li><a href="../web-pages/ModificarEntrenador.html">Datos personales</a></li>
-                <li><a href="../index.html">Log Out</a></li>
+                <li><a id="logout" href="../index.html">Log Out</a></li>
                </ul> 
             </li>
           </ul>
@@ -64,14 +64,29 @@
       <section id="crear-rutina" class="container">
         <h2 class="text-center font-weight-bolder mb-5 pb-3">Tus rutinas</h2>
        
-
         <!-- Programas -->
         <div class="rutinas-container">
-          <div class="mensaje-error">
-            <p>Programa no encontrado con estos criterios de búsqueda</p>
-          </div>
+          <!-- <div class="mensaje-error">
+            <p id="missatgeError">Programes de l'Entrenador <span id="autorProgramas"></span></p>
+            <p id="ProgramesEscollits"></p>
+          </div> -->
           <div class="rutinas-container__display">
+            <div class="row" id="items">
+            </div>
+            <!-- Presentacion de programas -->
           </div>
+          <template id="template-card">
+            <div class="col-12 mb-2 col-md-4">
+              <div class="card">
+                <img src="#" alt="" class="card-img-top">
+                <div class="card-body">
+                  <h5>Rutina</h5>
+                  <p>Descripcio</p>
+                  <button id="modificarRutina" class="btn btn-dark"><a href="" id="modificarRutina">Modificar</a></button>
+                </div>
+              </div>
+            </div>
+          </template>
         </div>
         <!-- ./Programas -->
 
@@ -140,6 +155,11 @@
 
     <!-- Custom scripts -->
     <script src="../js/login.js"></script>
+
+    <!-- Carregar CDN axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Script de validació Buscar-rutina.html -->
+    <script src="../js/cercar-rutina-entrenador.js"></script>
 
   </body>
 

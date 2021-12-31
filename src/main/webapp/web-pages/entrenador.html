@@ -54,11 +54,11 @@ and open the template in the editor.
               <a class="nav-link mr-5 pr-5" href="#">Contacto</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contenido</a>
+                <a class="nav-link" href="#" id="datos">Contenido</a>
                <ul>
-                <li><a href="../web-pages/ModificarRutina.html">Modificar Rutina</a></li>
+                <li><a href="../web-pages/cercar-rutina-entrenador.html">Modificar Rutina</a></li>
                 <li><a href="../web-pages/ModificarEntrenador.html">Datos personales</a></li>
-                <li><a href="../index.html">Log Out</a></li>
+                <li><a id="logout" href="../index.html">Log Out</a></li>
                </ul> 
             </li>
           </ul>
@@ -92,6 +92,10 @@ and open the template in the editor.
               </section>
           </div>
         </div>
+
+        <!-- Programas -->
+
+        <!-- ./Programas -->
 
     </main>
 
@@ -156,6 +160,11 @@ and open the template in the editor.
 
     <!-- Custom scripts -->
     <script src="../js/login.js"></script>
+
+    <!-- Carregar CDN axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Script de validació Buscar-rutina.html -->
+    <script src="../js/entrenador.js"></script>
 
   </body>
 

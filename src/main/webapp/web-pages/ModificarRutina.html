@@ -48,11 +48,11 @@
               <a class="nav-link mr-5 pr-5" href="#">Contacto</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contenido</a>
+                <a class="nav-link" id="datos" href="#">Contenido</a>
                <ul>
                 <li><a href="../web-pages/ModificarEntrenador.html">Datos personales</a></li>
                 <li><a href="#">Modificar Rutina</a></li>
-                <li><a href="../index.html">Log Out</a></li>
+                <li><a href="../index.html" id="logout">Log Out</a></li>
                </ul> 
             </li>
           </ul>
@@ -73,18 +73,18 @@
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
                 <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Modificar Rutina</h4>
-                <form>
+                <form id="form">
         
         
         
                     <div class="row ">
                         <div class="col-12 mb-5 col-md-6">
                             <label for="">Nombre</label>
-                            <input type="text" class="form-control" id="inputPassword4"  required=""> 
+                            <input type="text" class="form-control" id="nom" required=""> 
                         </div>
                         <div class="form-group col-12 col-md-4 offset-2">
                             <label for="exampleFormControlFile1">Agrega un vídeo</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile2">
+                            <input type="file" class="form-control-file" id="addVideo">
                         </div>
                     </div>
                     
@@ -92,7 +92,7 @@
                     <div class="row ">
                       <div class="col-12 mb-5 col-md-6">
                         <label for="">Categoría</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="categoria">
                           <option selected>Escoge una categoria</option>
                         </select>
                       </div>
@@ -102,7 +102,7 @@
                     <div class="row">
                       <div class="col-12 mb-5 col-md-6">
                         <label for="">Equipamiento</label>
-                        <select class="form-control" id="exampleFormControlSelect4">
+                        <select class="form-control" id="accessori">
                           <option selected>Escoge el equipo que vayas a usar</option>
                         </select>
                       </div>
@@ -111,11 +111,11 @@
                     <div class="row">
                       <div class="col-12 mb-5 col-md-6">
                         <label for="">Nivel</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                              <option selected>Selecciona el nivel</option>
-                              <option>Principiante</option>
-                              <option>Intermedio</option>
-                              <option>Avanzado</option>
+                        <select class="form-control" id="nivell">
+                              <option value="Selecciona el nivel" selected>Selecciona el nivel</option>
+                              <option value="Principiante">Principiante</option value="">
+                              <option value="Intermedio">Intermedio</option value="">
+                              <option value="Avanzado">Avanzado</option>
                         </select>
                       </div>
                     </div>
@@ -123,13 +123,13 @@
                     <div class="row">
                       <div class="col-12 mb-5 col-md-6">
                         <label for="">Duración</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                              <option selected>Selecciona el tiempo de duración del programa(minutos)</option>
-                              <option>15</option>
-                              <option>25</option>
-                              <option>30</option>
-                              <option>45</option>
-                              <option>60</option>
+                            <select class="form-control" id="duracio">
+                              <option value="Selecciona el tiempo de duración del programa(minutos)" selected>Selecciona el tiempo de duración del programa(minutos)</option>
+                              <option value="15">15</option>
+                              <option value="25">25</option>
+                              <option value="30">30</option>
+                              <option value="45">45</option>
+                              <option value="60">60</option>
                         </select>
                       </div>
                     </div>
@@ -137,21 +137,21 @@
                       <div class="row">
                       <div class="col-12 mb-5 col-md-6">
                         <label for="">Preu</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                              <option selected>Selecciona el precio para la rutina</option>
-                              <option>20</option>
-                              <option>30</option>
-                              <option>40</option>
-                              <option>50</option>
-                              <option>60</option>
-                              <option>70</option>
+                            <select class="form-control" id="preu">
+                              <option value= "Selecciona el precio para la rutina" selected>Selecciona el precio para la rutina</option>
+                              <option value="20">20</option>
+                              <option value="30">30</option>
+                              <option value="40">40</option>
+                              <option value="50">50</option>
+                              <option value="60">60</option>
+                              <option value="70">70</option>
                         </select>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-12 mb-5 col-md-6">
                         <label for="">Activa</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
+                            <select class="form-control" id="active">
                               <option selected>Selecciona si la rutina esta activa</option>
                               <option>True</option>
                               <option>False</option>
@@ -162,11 +162,11 @@
                     <div class="row mb-5">
                       <div class="col-12 col-md-8">
                         <label for="exampleFormControlTextarea1">Escribe una descripción de la rutina</label>
-                        <textarea class="form-control col-12" id="exampleFormControlTextarea1" rows="3" placeholder="Escribe aquí la descripción"></textarea>
+                        <textarea class="form-control col-12" id="descripcio" rows="3" placeholder="Escribe aquí la descripción"></textarea>
                       </div>
                       <div class="col-12 col-md-4">
                         <label for="exampleFormControlFile1">Adjuntar imagen</label>
-                        <input type="file" class="form-control-file" id="exampleFormControlFile2">
+                        <input type="file" class="form-control-file" id="addImg">
                       </div>
                     </div>
                     <hr class="mt-3 mb-4">
@@ -242,6 +242,13 @@
 
     <!-- Custom scripts -->
     <script src="../js/login.js"></script>
+
+    <!-- Carregar CDN axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Script de validació ModificarUsuario.html -->
+    <script src="../js/modificarRutina.js"></script>
+  </body>
+          
 
   </body>
 
