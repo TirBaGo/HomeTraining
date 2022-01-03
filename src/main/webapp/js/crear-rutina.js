@@ -30,6 +30,11 @@ const URLModalitat = "http://localhost:8080/ProvaProjecteDAW/api/modalitat/getMo
 //getAccessoris para captar los accessoris
 const URLAccessoris = "http://localhost:8080/ProvaProjecteDAW/api/accessori/getAccessoris";
 
+const login = JSON.parse(localStorage.getItem('login'));
+let datos = document.getElementById('datos');
+const logout = document.getElementById('logout');
+
+
 // //objecte que conté tots els camps que conté la rutina buscada
 const rutinaSeleccionada = {
     nom: true,
@@ -49,7 +54,7 @@ const rutinaSeleccionada = {
 const rutinaValors = {
     nom: "",
 	nom_modalitat: "",
-	dni_entrenador: "52912652w",
+	dni_entrenador: "",
 	nom_accessori: "",
 	duracio: "",
 	nivell: "",
@@ -178,6 +183,20 @@ async function ompleSelect(){
             selectAccessoris.appendChild(optAccessoris);
         }
 
+        //Modificar nav amb nom de l'entrenador
+        const dniUsuari = login.dni;
+
+        for (let i = 0 ; i < jsonEntrenador.length ; i++){
+            // console.log(datos)
+            if (jsonEntrenador[i].dni == dniUsuari){
+                const dades = jsonEntrenador[i];
+                console.log(dades);
+                localStorage.setItem('entrenador', JSON.stringify(dades));
+                datos.innerHTML = dades.nom + " " + dades.cognom1;
+
+            }
+        }
+
     } catch (err) {
         //la resposta es diferent de 200 i s'ha produit un error en el login d'usuari i surt un alert informant
         // location.reload();
@@ -207,15 +226,15 @@ async function escullSelect(){
         jsonModalitat = await resModalitat.data;
         jsonAccessoris = await resAccessoris.data;
 
-        // if(rutinaSeleccionada.accessori==false && 
-        //     rutinaSeleccionada.categoria==false &&
-        //     rutinaSeleccionada.duracio==false &&
-        //     rutinaSeleccionada.entrenador==false &&
-        //     rutinaSeleccionada.nivell==false){
-        //         programesEscollits.innerHTML = 'CAP PROGRAMA SELECCIONAT';
-        //         esborraProgrames();
-        //     }
-        // pintaCards(jsonRutina);
+        const dniUsuari = login.dni;
+
+        for (let i = 0 ; i < jsonEntrenador.length ; i++){
+            if (jsonEntrenador[i].dni == dniUsuari){
+                const dades = jsonEntrenador[i];
+                localStorage.setItem('entrenador', JSON.stringify(dades));
+                rutinaValors['dni_entrenador']=dniUsuari;
+            }
+        }
 
     } catch (err) {
         //la resposta es diferent de 200 i s'ha produit un error en el login d'usuari i surt un alert informant
@@ -272,23 +291,11 @@ formulario.addEventListener('submit', (e) => {
         rutinaValors.nom = "Rutina " + rutinaValors.nom_modalitat;
 
         console.log(rutinaValors)
-        // alert(rutinaValors)
 
-		//Cridem diferents funcions per enviar les dades a la taula usuaris i login 
+		//Cridem diferents funcions per enviar les dades a la taula rutines
 		SendDataRegister(rutinaValors);
 
-        // Afegim una informació conforme el formulari ha estat omplert correctament
-		// document.getElementById('formulari__mensaje-exito').classList.add('formulari__mensaje-exito-activo');
-		// setTimeout(() => {
-		// 	document.getElementById('formulari__mensaje-exito').classList.remove('formulari__mensaje-exito-activo');
-		// }, 5000);
-
-		// document.querySelectorAll('.formulari__grup-correcto').forEach((icono) => {
-		// 	icono.classList.remove('formulari__grup-correcto');
-		// });
-	} else {
-		// document.getElementById('formulari__mensaje').classList.add('formulari__mensaje-activo');
-	}
+	} 
 });
 
 /** 
@@ -303,6 +310,8 @@ async function SendDataRegister(rutina){
     const URL = "http://localhost:8080/ProvaProjecteDAW/api/rutina/addRutina";
 
 	let rutinaJSON = JSON.stringify(rutina);
+    localStorage.setItem('rutina', rutinaJSON);
+
     
 	try {
 		let options = {
@@ -329,47 +338,8 @@ async function SendDataRegister(rutina){
       }
 }
 
-/** 
- * @function SendDataLogin Enviem de forma asincrona amb async await les dades de registre a la tabla Login
- * @param {object} rep el json amb tots els valors dels diferents camps del login, un cop ja validats
- * @returns {void} Retorna una resposta 200 en cas d'exit en l'enviament de dades o altres errors que captura el catch i envia per pantalla
-*/
+logout.addEventListener('click', function sortirApp(){
+    datos.innerHTML = ("Datos");
+    localStorage.clear();
+});
 
-// async function SendDataLogin(camps){
-	
-//     const URL = "http://localhost:8080/ProvaProjecteDAW/api/rutina/addRutina";
-	
-// 	camps.username=camps.email;
-// 	let username = camps.username;
-// 	let password = camps.password;
-// 	let dni = camps.dni;
-
-// 	let campsLogin={
-// 		"username": username,
-// 		"password": password,
-// 		"dni": dni
-// 	}
-// 	console.log (campsLogin);
-	
-// 	try {
-// 		let options = {
-//           	method: "POST",
-//           	headers: {
-//             	"Content-type": "application/json; charset=utf-8",
-// 				"Access-Control-Allow-Origin": "*"
-// 		  	},
-
-//         	data: JSON.stringify(campsLogin,)
-		
-//         },
-// 		res = await axios(URL, options),
-// 		json = await res.data;
-
-//     } catch (err) {
-// 		//la resposta es diferent de 200 i s'ha produit un error en el login d'usuari i surt un alert informant
-//         location.reload();
-// 		let message = err.statusText || "S'ha produit un error en el registre";
-//         alert(message);
-		
-//       }
-// }

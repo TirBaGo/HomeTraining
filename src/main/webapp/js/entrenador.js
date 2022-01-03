@@ -1,14 +1,12 @@
 /**
- * @fileoverview Arxiu que fa la validació i enviament de dades d'un formulari de registre d'usuari
+ * @fileoverview Arxiu que gestiona les dades d'entrenador en la seva pagina web
  * @version 3.2
  * @author Ricardo Bazo
  * @copyright HomeTraining.com
  * 
  * History
- * v3.1 - S'incorpora l'enviament de dades a l'API de login d'usuari
- * v2.2 - Es fa la validació del formulari de Login
- * v2.1 - Es fa l'enviament de dades a l'API del registre d'usuari
- * v1.1. - Es fa la validació del formulari de registre
+ * v1.1 - Es fa la documentació de rutines d'entrenador
+
  */
     
 //Recuperamos valor del usuari
@@ -16,6 +14,10 @@ const login = JSON.parse(localStorage.getItem('login'));
 
 let datos = document.getElementById('datos');
 const logout = document.getElementById('logout');
+
+//getRutinas para captar todo el select
+const URLRutinas = "http://localhost:8080/ProvaProjecteDAW/api/rutina/getRutines";
+
 
 //Cridem les dades d'usuari
 async function consultaDadesUsuaris(){
@@ -39,19 +41,21 @@ async function consultaDadesUsuaris(){
         const dniUsuari = login.dni;
 
         for (let i = 0 ; i < json.length ; i++){
-    
             // console.log(datos)
             if (json[i].dni == dniUsuari){
                 const dades = json[i];
                 console.log(dades);
-                if (dades.isEntrenador){
-                    localStorage.setItem('entrenador', JSON.stringify(dades));
-                    window.location.replace("../web-pages/entrenador.html")
-                } else {
-                    localStorage.setItem('usuari', JSON.stringify(dades));
-                    datos.innerHTML = dades.nom + " " + dades.cognom1;
-                    // alert('Benvingut ' + dades.nom + ' ' + dades.cognom1);
-                }
+                localStorage.setItem('entrenador', JSON.stringify(dades));
+                datos.innerHTML = dades.nom + " " + dades.cognom1;
+
+                // if (dades.isEntrenador){
+                //     window.location.replace("../web-pages/entrenador.html")
+                // } else {
+                //     localStorage.setItem('usuari', JSON.stringify(dades));
+                //     datos.innerHTML = dades.nom + " " + dades.cognom1;
+                //     // alert('Benvingut ' + dades.nom + ' ' + dades.cognom1);
+                // }
+
             }
         }
         
@@ -68,3 +72,5 @@ logout.addEventListener('click', function sortirApp(){
 });
 
 consultaDadesUsuaris();
+
+
