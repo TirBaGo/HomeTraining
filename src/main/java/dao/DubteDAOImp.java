@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
  * Implementació DAO Dubte
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc DubteDAO
+ * @see DubteDAO
  */
 
 @Transactional

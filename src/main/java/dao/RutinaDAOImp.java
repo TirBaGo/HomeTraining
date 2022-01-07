@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
  * Implementació DAO Rutina
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc RutinaDAO
+ * @see RutinaDAO
  */
 @Transactional
 @Repository("rutinaDAOImp")

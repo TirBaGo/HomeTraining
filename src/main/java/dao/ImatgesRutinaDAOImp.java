@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
  * Implementació DAO ImatgesRutina
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc ImatgesRutinaDAO
+ * @see ImatgesRutinaDAO
  */
 @Transactional
 @Repository("imatgesRutinaDAOImp")

@@ -12,7 +12,7 @@ import model.Usuari;
  * Implementació de usuari Service
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc UsuariService
+ * @see UsuariService
  */
 @Service
 @Transactional

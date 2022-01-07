@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
  * Implementació DAO Login
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc LoginDAO
+ * @see LoginDAO
  */
 @Transactional
 @Repository("loginDAOImp")

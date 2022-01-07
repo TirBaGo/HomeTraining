@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
  * Implementació DAO Modalitat
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc ModalitatDAO
+ * @see ModalitatDAO
  */
 @Transactional
 @Repository("modalitatDAOImp")

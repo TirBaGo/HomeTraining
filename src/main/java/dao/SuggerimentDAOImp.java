@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
  * Implementació DAO Suggeriment
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc SuggerimentDAO
+ * @see SuggerimentDAO
  */
 
 @Transactional

@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
  * Implementació DAO accessori
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc AccessoriDAO
+ * @see AccessoriDAO
  */
 @Transactional
 @Repository("accessoriDAOImp")

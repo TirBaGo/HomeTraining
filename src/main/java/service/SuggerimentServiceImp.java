@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * Implemntació de Suggeriment Service
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc SuggerimentService
+ * @see SuggerimentService
  */
 @Service
 @Transactional
