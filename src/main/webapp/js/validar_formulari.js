@@ -299,7 +299,7 @@ async function SendDataLogin(camps){
 				"Access-Control-Allow-Origin": "*"
 		  	},
 
-        	data: JSON.stringify(campsLogin,)
+        	data: JSON.stringify(campsLogin)
 		
         },
 		res = await axios(URL, options),
