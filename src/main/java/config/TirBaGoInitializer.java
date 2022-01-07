@@ -1,6 +1,12 @@
 package config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+/**
+ * Classe que inicialitza les configuracions 
+ * @author Nerea Gallardo Tirado
+ * @version 1.0
+ */
 public class TirBaGoInitializer extends AbstractAnnotationConfigDispatcherServletInitializer{
 
 	 @Override
