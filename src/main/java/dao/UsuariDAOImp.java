@@ -16,7 +16,7 @@ import java.util.List;
  * Implementació DAO Usuari
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc UsuariDAO
+ * @see UsuariDAO
  */
 @Transactional
 @Repository("usuariDAOImp")

@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * Implementació de Bug Service
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc BugService
+ * @see BugService
  */
 @Service
 @Transactional

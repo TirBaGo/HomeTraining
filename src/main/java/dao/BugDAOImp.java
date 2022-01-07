@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
  * Implementació DAO Bug
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc BugDAO
+ * @see BugDAO
  */
 @Transactional
 @Repository("bugDAOImp")

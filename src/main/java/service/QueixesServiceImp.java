@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * Implementació de Queixes Service
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc QueixesService
+ * @see QueixesService
  */
 @Service
 @Transactional

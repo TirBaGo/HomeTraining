@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * Implementació de modalitat service
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc ModalitatService
+ * @see ModalitatService
  */
 @Service
 @Transactional

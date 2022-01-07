@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * Implementació de login Service
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc LoginService
+ * @see LoginService
  */
 @Service
 @Transactional

@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * Implemenbtació de Rutina Service
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc RutinaService
+ * @see RutinaService
  */
 @Service
 @Transactional

@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  *  Implementació de Imatges Rutina Service
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc ImatgesRutinaService
+ * @see ImatgesRutinaService
  */
 @Service
 @Transactional

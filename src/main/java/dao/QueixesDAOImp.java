@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
  * Implementació DAO Queixes
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc QueixesDAO
+ * @see QueixesDAO
  */
 
 @Transactional

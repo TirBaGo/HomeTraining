@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * Implementació de Accessori Service
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc AccessoriService
+ * @see AccessoriService
  */
 @Service
 @Transactional

@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * Implementació de Dubte Service
  * @author Nerea Gallardo
  * @version 1.0
- * @inheritDoc DubteService
+ * @see DubteService
  */
 @Service
 @Transactional
