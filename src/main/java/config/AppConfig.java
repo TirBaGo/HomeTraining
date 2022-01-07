@@ -14,6 +14,11 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import static org.hibernate.cfg.Environment.*;
 
+/**
+ * Configuració Base de dades, Hibernate i c3p0
+ * @author Nerea Gallardo Tirado
+ * @version 1.0
+ */
 @Configuration
 @PropertySource("classpath:application.properties")
 @EnableTransactionManagement
@@ -24,7 +29,11 @@ public class AppConfig {
    @Autowired
    private Environment env;
 
-   @Bean
+    /**
+     * Metode que agafa totes les propietats per fer la connexió posible i retorna un factoryBean amb aquestes
+     * @return factoryBean amb les propietats per a la connexió a la bbdd
+     */
+    @Bean
    public LocalSessionFactoryBean getSessionFactory() {
       LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
 
@@ -53,7 +62,11 @@ public class AppConfig {
       return factoryBean;
    }
 
-   @Bean
+    /**
+     * Metode per fer la transacció de hibernate
+     * @return transactionManager amb l'objecte de la SessionFactory
+     */
+    @Bean
    public HibernateTransactionManager getTransactionManager() {
       HibernateTransactionManager transactionManager = new HibernateTransactionManager();
       transactionManager.setSessionFactory(getSessionFactory().getObject());
