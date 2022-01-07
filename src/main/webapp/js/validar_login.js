@@ -11,6 +11,8 @@
 // variables de només lectura
 const formulario = document.getElementById('form'); //captura el formulari d'html gràcies al seu id
 const inputs = document.querySelectorAll('#form input'); //captura tots els input del formulari i el guarda en un array
+//Variable contador per valorar el nombre d'intents en els login
+let contador = 2; //
 
 const expresions = {
 	password: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/, // Ha de tener uno o más números, una letra mayúscula, una letra minúscula y 8 o más caracteres.
@@ -117,6 +119,7 @@ async function LoginAccept(name){
 		json = await res.data;
         console.log(json);
         comprovacio=false;
+;
 
         for (let i = 0 ; i < json.length ; i++){
             if ((json[i].username == userEmail) && (json[i].password == userPassword)){
@@ -124,20 +127,31 @@ async function LoginAccept(name){
                 comprovacio=true;
 				localStorage.setItem('login', JSON.stringify(json[i]));
 				window.location.replace("../web-pages/usuario.html");
+			} 
+		}
 
-            }
-        }
-        console.log(comprovacio);
-        if (comprovacio==false){
-            alert('DADES INCORRECTES');
-        } 
- 
-    }     catch (err) {
-		//la resposta es diferent de 200 i s'ha produit un error en el login d'usuari i surt un alert informant
-        // location.reload();
-		let message = err.statusText || "S'ha produit un error en el registre usuari";
-        console.log(err);
-	
-      }
-    }
+	console.log(comprovacio);
+
+	if (comprovacio==false){
+		// alert('DADES INCORRECTES');
+		let texto ='Dadas inexistentes. Tienes ' + contador + ' intentos más o cancela para registrarte';
+		let nuevoIntento = confirm(texto);
+		console.log(nuevoIntento)
+		if (nuevoIntento && contador>0){
+			contador=contador-1;
+			console.log(contador)
+		} else {
+			alert('SE REDIRIGIRÁ A LA PAGINA DE REGISTRO')
+			window.location.replace("../web-pages/registro.html");
+		}
+	}
+
+}     catch (err) {
+	//la resposta es diferent de 200 i s'ha produit un error en el login d'usuari i surt un alert informant
+	// location.reload();
+	let message = err.statusText || "S'ha produit un error en el registre usuari";
+	console.log(err);
+}
+
+}
 

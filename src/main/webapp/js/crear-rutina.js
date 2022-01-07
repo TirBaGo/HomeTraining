@@ -310,10 +310,8 @@ async function SendDataRegister(rutina){
     const URL = "http://localhost:8080/ProvaProjecteDAW/api/rutina/addRutina";
 
 	let rutinaJSON = JSON.stringify(rutina);
-    localStorage.setItem('rutina', rutinaJSON);
-
     
-	try {
+    	try {
 		let options = {
           	method: "POST",
           	headers: {

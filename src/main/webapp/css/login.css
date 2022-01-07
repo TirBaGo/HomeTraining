@@ -340,6 +340,19 @@ iframe {
 
 /* Codigo añadido por Ricardo */
 
+#navbar-link>li:hover>ul {
+  display:block;
+}
+#navbar-link>li>ul{
+  display: none;
+}
+#navbar-link>li{
+  float: left;
+}
+.signup_v4 .nav-tabs .nav-link.active {
+    width: 200%;
+}
+
 .formulari__input-error {
 	font-size: 12px;
 	margin-bottom: 0;

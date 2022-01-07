@@ -24,9 +24,13 @@ const cp = document.getElementById('cp');
 const poblacio = document.getElementById('poblacio');
 const provincia = document.getElementById('provincia');
 const password = document.getElementById('password');
+const passwordRep = document.getElementById('passwordRep');
 
 const inputs = document.querySelectorAll('#form input'); //captura tots els input del formulari i el guarda en un array
 const formulario = document.getElementById('form'); //captura el formulari d'html gràcies al seu id
+let datos = document.getElementById('datos');
+const logout = document.getElementById('logout');
+
 
 let usuariContrasenya = "";
 
@@ -201,8 +205,7 @@ inputs.forEach((input) => {
 
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
-	// if(camps.nom && camps.cognom1 && camps.cognom2 && camps.email && camps.dni && camps.telefon && camps.adreca && camps.codpost && camps.poblacio && camps.provincia && camps.password && camps.telefon){
-
+	if(camps.password){
 		//convertim en valor numeric els camps de telefon i codi postal
 		let valorStringTelefon = campsValorNueva.telefon;
 		let valorInt = parseInt(valorStringTelefon);
@@ -224,6 +227,9 @@ formulario.addEventListener('submit', (e) => {
 
 		SendDataChange(campsValorOriginal);
 
+	} else {
+		alert('LAS CONTRASEÑAS NO COINCIDEN')
+	}
 });
 
 function modifiquemValor (camp){
@@ -254,13 +260,15 @@ async function consultaDadesUsuaris(){
 		res = await axios(URL, options),
         json = await res.data;
 
-        console.log(json)
-			const dniUsuari = usuario.dni;
-	
+		const dniUsuari = usuario.dni;
+		
+		SendLocalitzaLogin(campsValorOriginal)
 
         for (let i = 0 ; i < json.length ; i++){
             if ((json[i].dni == dniUsuari)){
-                console.log(json[i])
+				console.log(json[i])
+				const dades = json[i];
+				datos.innerHTML = dades.nom + " " + dades.cognom1;
                 campsValorOriginal['dni'] = dniUsuari;
                 console.log('USUARI TROBAT');
                 nom.value = json[i].nom;
@@ -282,10 +290,11 @@ async function consultaDadesUsuaris(){
                 campsValorOriginal['data_alta'] = json[i].data_alta;
                 campsValorOriginal['isEntrenador'] = json[i].isEntrenador;
                 campsValorOriginal['id_usuari'] = json[i].id_usuari;
+				console.log(json[i])
                 }
-
             }
-    } catch (err) {
+			SendPrintLogin(campsValorOriginal)
+		} catch (err) {
         location.reload();
 		let message = err.statusText || "Ocurrió un error en el registro";
         console.log('Error' + ': ' + err);
@@ -296,7 +305,6 @@ async function consultaDadesUsuaris(){
 async function SendDataChange(camps){
 	
     const URL = "http://localhost:8080/ProvaProjecteDAW/api/usuari/modifyUsuari";
-    console.log(camps)
 	try {
 		let options = {
           	method: "PUT",
@@ -309,14 +317,9 @@ async function SendDataChange(camps){
         },
 		res = await axios(URL, options),
         json = await res.data;
-        console.log(json);
-        console.log(campsValorOriginal);
         alert('CANVI REALITZAT!');
-        if (json.isEntrenador){
-            window.location.replace("../web-pages/entrenador.html")
-        } else {
-            window.location.replace("../web-pages/usuario.html")
-        }
+
+		SendDataLogin(campsValorOriginal)
 
     } catch (err) {
         // location.reload();
@@ -325,5 +328,170 @@ async function SendDataChange(camps){
 		console.log('Error' + ': ' + err);
       }
 }
+
+async function SendPrintLogin(camps){
+	
+    const URL = "http://localhost:8080/ProvaProjecteDAW/api/login/getLogin";
+	
+	camps.username=camps.email;
+	let username = camps.username;
+	let passwordloc = camps.password;
+	let dni = camps.dni;
+
+	let campsLogin={
+		"username": username,
+		"password": passwordloc,
+		"dni": dni
+	}
+	
+	try {
+		let options = {
+          	method: "GET",
+          	headers: {
+            	"Content-type": "application/json; charset=utf-8",
+				"Access-Control-Allow-Origin": "*"
+		  	},
+
+			  data: campsLogin,
+		
+        },
+		res = await axios(URL, options),
+		json = await res.data;
+		
+
+		for(let i=0; i<json.length; i++){
+			if(json[i].username == username){
+				campsValorOriginal['password']=json[i].password;
+				password.value = json[i].password;
+				passwordRep.value = json[i].password;
+
+			}
+		}
+
+
+    } catch (err) {
+		//la resposta es diferent de 200 i s'ha produit un error en el login d'usuari i surt un alert informant
+		let message = err.statusText || "S'ha produit un error en el registre login";
+		console.log(err)
+        alert(err);
+		
+      }
+}
+
+async function SendLocalitzaLogin(camps){
+	
+    const URL = "http://localhost:8080/ProvaProjecteDAW/api/login/getLogin";
+	
+	camps.username=camps.email;
+	let username = camps.username;
+	let password = camps.password;
+	let dni = camps.dni;
+
+	let campsLogin={
+		"username": username,
+		"password": password,
+		"dni": dni
+	}
+	
+	try {
+		let options = {
+          	method: "GET",
+          	headers: {
+            	"Content-type": "application/json; charset=utf-8",
+				"Access-Control-Allow-Origin": "*"
+		  	},
+
+			  data: campsLogin,
+		
+        },
+		res = await axios(URL, options),
+		json = await res.data;
+		
+
+		for(let i=0; i<json.length; i++){
+			if(json[i].username == username){
+				SendEsborraLogin(json[i]);
+			} 
+		}
+
+    } catch (err) {
+		//la resposta es diferent de 200 i s'ha produit un error en el login d'usuari i surt un alert informant
+		let message = err.statusText || "S'ha produit un error en el registre login";
+		console.log(err)
+        alert(err);
+		
+      }
+}
+
+async function SendEsborraLogin(camps){
+	
+    const URL = "http://localhost:8080/ProvaProjecteDAW/api/login/deleteLogin";
+	try {
+		let options = {
+          	method: "DELETE",
+          	headers: {
+            	"Content-type": "application/json; charset=utf-8",
+				"Access-Control-Allow-Origin": "*"
+		  	},
+        	data: 
+            	camps,
+        },
+		res = await axios(URL, options),
+        json = await res.data;
+
+    } catch (err) {
+        // location.reload();
+		let message = err.statusText || "Ocurrió un error en el registro registro";
+        console.log(err)
+		console.log('Error' + ': ' + err);
+      }
+}
+
+async function SendDataLogin(camps){
+	
+    const URL = "http://localhost:8080/ProvaProjecteDAW/api/login/addLogin";
+	
+	camps.username=camps.email;
+	let username = camps.username;
+	let password = camps.password;
+	let dni = camps.dni;
+
+	let campsLogin={
+		"username": username,
+		"password": password,
+		"dni": dni
+	}
+	
+	try {
+		let options = {
+          	method: "POST",
+          	headers: {
+            	"Content-type": "application/json; charset=utf-8",
+				"Access-Control-Allow-Origin": "*"
+		  	},
+
+        	data: JSON.stringify(campsLogin)
+		
+        },
+		res = await axios(URL, options),
+		json = await res.data;
+		localStorage.setItem('login', JSON.stringify(campsLogin));
+
+
+
+    } catch (err) {
+		//la resposta es diferent de 200 i s'ha produit un error en el login d'usuari i surt un alert informant
+        location.reload();
+		let message = err.statusText || "S'ha produit un error en el registre login";
+		console.log(err)
+        alert(err);
+		
+      }
+}
+
+logout.addEventListener('click', function sortirApp(){
+    datos.innerHTML = ("Datos");
+    localStorage.clear();
+});
 
 consultaDadesUsuaris();

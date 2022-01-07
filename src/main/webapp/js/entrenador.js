@@ -47,15 +47,6 @@ async function consultaDadesUsuaris(){
                 console.log(dades);
                 localStorage.setItem('entrenador', JSON.stringify(dades));
                 datos.innerHTML = dades.nom + " " + dades.cognom1;
-
-                // if (dades.isEntrenador){
-                //     window.location.replace("../web-pages/entrenador.html")
-                // } else {
-                //     localStorage.setItem('usuari', JSON.stringify(dades));
-                //     datos.innerHTML = dades.nom + " " + dades.cognom1;
-                //     // alert('Benvingut ' + dades.nom + ' ' + dades.cognom1);
-                // }
-
             }
         }
         

@@ -144,10 +144,8 @@ const pinta = producto => {
             items.appendChild(fragment);
             contador = contador + 1;
         } else { 
-            // esborraProgrames();
             items.appendChild(fragment);
         }
-
 }
 
 function esborraProgrames(){
