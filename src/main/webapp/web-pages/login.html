@@ -64,22 +64,35 @@
         <div class="limit">
           <div class="login-container">
             <div class="bb-login">
-              <form class="bb-form validate-form"> <span class="bb-form-title p-b-26 mb-5"> Inicio de sesión </span><span class="bb-form-title p-b-4"> <i
-                    class="mdi mdi-symfony"></i> </span>
-                <div class="form-group col-md-12 validate-input" data-validate="Valid email is: a@b.c> <label for=" inputName">Email</label> <input
-                    type="email" class="form-control" id="inputEmail4" placeholder="Inicie session con e-mail" required=""> </div>
-
+              <form class="bb-form validate-form" id="form"> <span class="bb-form-title p-b-26 mb-5"> Inicio de sesión </span><span class="bb-form-title p-b-4">
+                  <i class="mdi mdi-symfony"></i> </span>
+                <div class="form-group col-md-12 validate-input" data-validate="Valid email is: a@b.c> <label for=" inputName">Email</label> 
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Inicie session con e-mail" required=""> 
+                  <p class="formulari__input-error">Ha de ser una combinació de lletres o nombres + l'arroba + més text en llebres o nombres + un punt + més text.</p>
+                </div>
                 <div class="form-group col-md-12"> <label for="inputName">Contraseña</label><span class="btn-show-pass"> <i
                       class="bi bi-eye-fill"></i>
-                  </span> <input type="password" class="form-control" id="inputPassword4" placeholder="Escriba su Contraseña" required
+                  </span> <input type="password" class="form-control" id="password" name="password" placeholder="Escriba su Contraseña" required
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    title="Ha de tener uno o más números, una letra mayúscula, una letra minúscula y 8 o más caracteres."> <span
-                    class="bbb-input"></span> </div>
+                    title="Ha de tener uno o más números, una letra mayúscula, una letra minúscula y 8 o más caracteres."> 
+                    <p class="formulari__input-error">Contrasenya incorrecta.</p>
+                </div>
                 <div class="login-container-form-btn">
                   <button class="btn btn-dark mt-5"> Iniciar sesión </button>
                 </div>
-                <div class="text-center p-t-115"> <span class="mr-2"> Aún no tiene registro realizado? </span> <a href="../web-pages/registro.html">
-                    Regístrate </a> </div>
+                <div class="text-center p-t-115">
+                <div class="text-center p-t-115"> 
+                    <span class="mr-2">Olvidado Contraseña?</span> 
+                    <a href="../web-pages/RecordarContraseña.html">Recordar Contraseña</a> 
+                </div>
+              <div class="text-center p-t-115"> 
+                  <span class="mr-2"> Aún no tiene registro realizado? </span> 
+                  <a href="../web-pages/registro.html">Regístrate </a> 
+              </div>
+                <p class="formulari__mensaje-exito" id="formulari__mensaje-exito">formulari enviado exitosamente!</p>
+                <div class="formulari__mensaje" id="formulari__mensaje">
+                    <p><b>Error:</b> Por favor rellena el formulari correctamente. </p>
+                </div>
               </form>
             </div>
           </div>
@@ -151,6 +164,12 @@
     <!-- Custom scripts -->
     <script src="../js/login.js"></script>
 
+    <!-- Carregar CDN axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
+    <!-- Script de validació login.html -->
+     <script src="../js/validar_login.js"></script>
+
   </body>
 
 </html>
+

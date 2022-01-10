@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 
   <head>
     <meta charset="utf-8" />
@@ -39,13 +37,13 @@
               <a class="nav-link mr-5 pr-5" href="#">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mr-5" href="#">Programas</a>
+              <a class="nav-link mr-5" href="./web-pages/buscar-rutina.html">Programas</a>
             </li>
             <li class="nav-item">
               <a class="nav-link mr-5" href="#">Acerca de nosotros</a>
             </li>
             <li class="nav-item mr-5">
-              <a class="nav-link" href="#">Blog</a>
+              <a class="nav-link" href="./web-pages/crear-rutina.html">Blog</a>
             </li>
             <li class="nav-item">
               <a class="nav-link mr-5 pr-5" href="#">Contacto</a>
@@ -54,10 +52,9 @@
               <a class="nav-link mr-3" href="./web-pages/login.html">Iniciar Sesion</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./web-pages/registro.html">RegÃ­strate</a>
+              <a class="nav-link" href="./web-pages/registro.html">Regístrate</a>
             </li>
           </ul>
-
         </div>
       </nav>
     </header>
@@ -66,13 +63,11 @@
 
       <!-- Carousel -->
       <section class="carousel slide" data-ride="carousel">
-
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
           <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
-
         <div class="carousel-inner font-weight-bold">
           <div class="carousel-item active">
             <img class="img-responsive"
@@ -83,13 +78,11 @@
               <div class="carousel-caption text-left">
                 <h1 class="display-2 font-weight-bold">Home Training.</h1>
                 <p id="carousel__p">Tu gimnasio en casa.</p>
-                <p><a class="btn btn-lg btn-dark font-weight-bold" href="#">RegÃ­strate</a></p>
-
+                <p><a class="btn btn-lg btn-dark font-weight-bold" href="#">Regístrate</a></p>
               </div>
             </div>
           </div>
           <div class="carousel-item">
-
             <img class="img-responsive"
               src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
               width="100" class="d-block w-80" alt="Segunda imagen del carousel" />
@@ -98,13 +91,11 @@
               <div class="carousel-caption">
                 <h1 class="display-2 font-weight-bold">Home training.</h1>
                 <p id="carousel__p">Entrenamientos en casa.</p>
-                <p><a class="btn btn-lg btn-dark font-weight-bold" href="#">Leer mÃ¡s</a></p>
-
+                <p><a class="btn btn-lg btn-dark font-weight-bold" href="#">Leer más</a></p>
               </div>
             </div>
           </div>
           <div class="carousel-item">
-
             <img class="img-responsive"
               src="https://images.pexels.com/photos/841135/pexels-photo-841135.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" width="100"
               class="d-block w-80" alt="Tercera imangen del carousel" />
@@ -113,8 +104,7 @@
               <div class="carousel-caption text-right">
                 <h1 class="display-2 font-weight-bold">Home Training.</h1>
                 <p id="carousel__p">Entrena en casa como si estuvieses en el gimnasio.</p>
-                <p><a class="btn btn-lg btn-dark font-weight-bold" href="#">GalerÃ­a</a></p>
-
+                <p><a class="btn btn-lg btn-dark font-weight-bold" href="#">Galería</a></p>
               </div>
             </div>
           </div>
@@ -127,7 +117,6 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-
       </section>
       <!-- ./Carousel -->
 
@@ -142,9 +131,9 @@
             <img class="img-responsive" src="https://images.pexels.com/photos/416809/pexels-photo-416809.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
               width="200" class="d-block w-100" alt="Entrenadora 1" />
 
-            <h2>Laura RamÃ­rez</h2>
+            <h2>Laura Ramírez</h2>
             <p>Una de las mejores entrenadoras personales, con mucha experiencia.</p>
-            <p><a class="btn btn-dark font-weight-bold" href="#">MÃ¡s info &raquo;</a></p>
+            <p><a class="btn btn-dark font-weight-bold" href="#">Más info &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4 personal pt-3 border-right">
             <img class="img-responsive"
@@ -152,16 +141,16 @@
               width="200" class="d-block w-100" alt="Entrenadora 2" />
 
             <h2>Jonathan Ulises</h2>
-            <p>Instructor certificado Fitness, especialista en ejercicio aerÃ³bico y nutriciÃ³n.</p>
-            <p><a class="btn btn-dark font-weight-bold" href="#">MÃ¡s info &raquo;</a></p>
+            <p>Instructor certificado Fitness, especialista en ejercicio aeróbico y nutrición.</p>
+            <p><a class="btn btn-dark font-weight-bold" href="#">Más info &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4 personal pt-3">
             <img class="img-responsive" src="https://images.pexels.com/photos/4056534/pexels-photo-4056534.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
               width="200" class="d-block w-100" alt="Entrenadora 2" />
 
             <h2>Victoria Jones</h2>
-            <p>Licenciada en ciencias de la actividad fÃ­sica y el deporte.</p>
-            <p><a class="btn btn-dark font-weight-bold" href="#">MÃ¡s info &raquo;</a></p>
+            <p>Licenciada en ciencias de la actividad física y el deporte.</p>
+            <p><a class="btn btn-dark font-weight-bold" href="#">Más info &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
       </section>
@@ -170,7 +159,7 @@
       <!-- Programas gratuitos -->
       <section id="programas" class="container-fluid mt-5">
         <h2 class=" text-center font-weight-bolder h1"> Programas gratuitos</h2>
-        <p class="lead text-center ">RegÃ­strate y empieza a entrenar gratis.</p>
+        <p class="lead text-center ">Regístrate y empieza a entrenar gratis.</p>
 
         <div class="container mt-5">
 
@@ -184,13 +173,13 @@
                 </div>
                 <div class="caption card-body">
                   <h4 class="group card-title inner list-group-item-heading">
-                    TonificaciÃ³n</h4>
+                    Tonificación</h4>
                   <p class="group inner list-group-item-text">
-                    AnimÃ¡te a congestinar para un mejor crecimiento muscular.</p>
+                    Animáte a congestinar para un mejor crecimiento muscular.</p>
                   <div class="row">
 
                     <div class="col-xs-12 col-md-6">
-                      <a class="btn btn-dark" href="#">Â¡Empieza ya!</a>
+                      <a class="btn btn-dark" href="#">¡Empieza ya!</a>
                     </div>
                   </div>
                 </div>
@@ -204,13 +193,13 @@
                 </div>
                 <div class="caption card-body">
                   <h4 class="group card-title inner list-group-item-heading">
-                    AerÃ³bicos</h4>
+                    Aeróbicos</h4>
                   <p class="group inner list-group-item-text">
-                    Ejercicos aerÃ³bicos para sentirte mejor durante el todo el dÃ­a.</p>
+                    Ejercicos aeróbicos para sentirte mejor durante el todo el día.</p>
                   <div class="row">
 
                     <div class="col-xs-12 col-md-6">
-                      <a class="btn btn-dark" href="#">Â¡Empieza ya!</a>
+                      <a class="btn btn-dark" href="#">¡Empieza ya!</a>
                     </div>
                   </div>
                 </div>
@@ -230,7 +219,7 @@
                   <div class="row">
 
                     <div class="col-xs-12 col-md-6">
-                      <a class="btn btn-dark" href="#">Â¡Empieza ya!</a>
+                      <a class="btn btn-dark" href="#">¡Empieza ya!</a>
                     </div>
                   </div>
                 </div>
@@ -245,8 +234,8 @@
       <section id="subscripcion">
         <!-- Top header -->
         <div class="w-50 px-3 py-3 pt-md-4 pb-md-4 mx-auto text-center">
-          <h1 class=" font-weight-bold">SubscrÃ­bete</h1>
-          <p class="lead d-block">Elige el plan que mÃ¡s se ajuste a tÃ­ y empieza a entrenar con nuestro contenido gratuito o premium.</p>
+          <h1 class=" font-weight-bold">Subscríbete</h1>
+          <p class="lead d-block">Elige el plan que más se ajuste a tí y empieza a entrenar con nuestro contenido gratuito o premium.</p>
         </div>
 
         <!-- Cards container -->
@@ -263,19 +252,19 @@
                 <!-- Price class -->
                 <div class="pricing-price pb-1 text-primary color-primary-text ">
                   <h1 style="font-weight: 1000; font-size: 3.5em;">
-                    0,00<span style="   font-size: 20px;">â‚¬</span>
+                    0,00<span style="   font-size: 20px;">?</span>
                   </h1>
                 </div>
                 <!-- Perks of said subscription -->
                 <div class="pricing-description text-left">
                   <div class="list mt-3 mb-4 ml-4">
                     <p class="pl-3 pr-3">Acceso a nuestro contenido gratuito.</p>
-                    <p class="pl-3 pr-3">RegÃ­strate sin tener que pagar ni dar tarjeta de crÃ©dito.</p>
+                    <p class="pl-3 pr-3">Regístrate sin tener que pagar ni dar tarjeta de crédito.</p>
                   </div>
                 </div>
                 <!-- Button -->
                 <div class="pricing-button pb-4">
-                  <button type="button" class="btn btn-lg btn-dark w-75">Â¡RegÃ­strate ahora!</button>
+                  <button type="button" class="btn btn-lg btn-dark w-75">¡Regístrate ahora!</button>
                 </div>
               </div>
             </div>
@@ -288,18 +277,18 @@
                 </div>
                 <div class="pricing-price pb-1 text-primary ">
                   <h1 style="font-weight: 1000; font-size: 3.5em;">
-                    19,99<span style="font-size: 20px;">â‚¬</span>
+                    19,99<span style="font-size: 20px;">?</span>
                   </h1>
                 </div>
                 <div class="pricing-description text-left">
                   <div class="list mt-3 mb-4 ml-4">
-                    <p class="pl-3 pr-3">Todo lo gratuito mÃ¡s nuestro contenido premium.</p>
+                    <p class="pl-3 pr-3">Todo lo gratuito más nuestro contenido premium.</p>
                     <p class="pl-3 pr-3">Cancela en cualquier momento.</p>
 
                   </div>
                 </div>
                 <div class="pricing-button pb-4">
-                  <button type="button" class="btn btn-lg btn-dark w-75">Â¡RegÃ­strate ahora!</button>
+                  <button type="button" class="btn btn-lg btn-dark w-75">¡Regístrate ahora!</button>
                 </div>
               </div>
             </div>
@@ -312,18 +301,18 @@
                 </div>
                 <div class="pricing-price pb-1 text-primary  ">
                   <h1 style="font-weight: 1000; font-size: 3.5em;">
-                    179,99<span style="font-size: 20px;">â‚¬</span>
+                    179,99<span style="font-size: 20px;">?</span>
                   </h1>
                 </div>
                 <div class="pricing-description text-left">
                   <div class="list mt-3 mb-4 ml-4">
-                    <p class="pl-3 pr-3">Todo el contenido gratuito y primium mÃ¡s estrenos especiales.</p>
-                    <p class="pl-3 pr-3">Ahorra mÃ¡s de 50 â‚¬</p>
+                    <p class="pl-3 pr-3">Todo el contenido gratuito y primium más estrenos especiales.</p>
+                    <p class="pl-3 pr-3">Ahorra más de 50 ?</p>
                     <p class="pl-3 pr-3">Cancela en cualquier momento.</p>
                   </div>
                 </div>
                 <div class="pricing-button pb-4">
-                  <button type="button" class="btn btn-lg btn-dark w-75">Â¡RegÃ­strate ahora!</button>
+                  <button type="button" class="btn btn-lg btn-dark w-75">¡Regístrate ahora!</button>
                 </div>
               </div>
             </div>
@@ -335,7 +324,7 @@
       <!-- Categorias -->
       <section id="categorias">
         <h2 class=" text-center font-weight-bolder h1"> Categorias</h2>
-        <p class="lead text-center ">Nuestro catÃ¡logo de rutinas a demanda.</p>
+        <p class="lead text-center ">Nuestro catálogo de rutinas a demanda.</p>
 
         <div class="container mt-5">
 
@@ -389,7 +378,7 @@
                   <h4 class="group card-title inner list-group-item-heading">
                     Brazos</h4>
                   <p class="group inner list-group-item-text">
-                    CongestiÃ³n de brazos.</p>
+                    Congestión de brazos.</p>
                   <div class="row">
 
                     <div class="col-xs-12 col-md-8">
@@ -429,7 +418,7 @@
                   <h4 class="group card-title inner list-group-item-heading">
                     Piernas y gluteos</h4>
                   <p class="group inner list-group-item-text">
-                    Consigue congestiÃ³n y fuerza de piernas.</p>
+                    Consigue congestión y fuerza de piernas.</p>
                   <div class="row">
 
                     <div class="col-xs-12 col-md-8">
@@ -480,8 +469,8 @@
         <div class="row">
           <div class="container text-center text-white ">
             <h2 class="display-4 font-weight-bold" ">Nuestra comunidad</h2>
-          <p id=" carousel__p">Ãšnete a nuestra comunidad para motivarte en tu ejercicio diario.</p>
-              <p><a class="btn btn-lg btn-dark font-weight-bold mt-5" href="#">Ãšnete a nosotros</a></p>
+          <p id=" carousel__p">Únete a nuestra comunidad para motivarte en tu ejercicio diario.</p>
+              <p><a class="btn btn-lg btn-dark font-weight-bold mt-5" href="#">Únete a nosotros</a></p>
           </div>
         </div>
       </section>
@@ -499,20 +488,20 @@
             <p><i class="bi bi-envelope-fill"></i> info@hometraining.com </p>
           </div>
           <div class="col-xs-12 col-sm-4 col-md-4">
-            <h5>Enlaces de acceso rÃ¡pido</h5>
+            <h5>Enlaces de acceso rápido</h5>
             <ul class="list-unstyled quick-links">
               <li><a href="#"><i class="bi bi-chevron-double-right"></i>Inicio</a></li>
-              <li><a href="#"><i class="bi bi-chevron-double-right"></i></i>ContÃ¡ctanos</a></li>
+              <li><a href="#"><i class="bi bi-chevron-double-right"></i></i>Contáctanos</a></li>
               <li><a href="#"><i class="bi bi-chevron-double-right"></i>Preguntas frecuentes</a></li>
               <li><a href="#"><i class="bi bi-chevron-double-right"></i>Acerca de nosotros</a></li>
-              <li><a href="#"><i class="bi bi-chevron-double-right"></i>PolÃ­tica de privacidad</a></li>
+              <li><a href="#"><i class="bi bi-chevron-double-right"></i>Política de privacidad</a></li>
             </ul>
           </div>
           <div class="col-xs-12 col-sm-4 col-md-4">
             <h5>Home Training</h5>
             <ul class="list-unstyled quick-links">
-              <li><a href="#"><i class="bi bi-chevron-double-right"></i>Iniciar sesiÃ³n</a></li>
-              <li><a href="#"><i class="bi bi-chevron-double-right"></i>RegÃ­strate</a></li>
+              <li><a href="#"><i class="bi bi-chevron-double-right"></i>Iniciar sesión</a></li>
+              <li><a href="#"><i class="bi bi-chevron-double-right"></i>Regístrate</a></li>
               <li><a href="#"><i class="bi bi-chevron-double-right"></i>Rutinas</a></li>
               <li><a href="#"><i class="bi bi-chevron-double-right"></i>Entrenadores</a></li>
               <li><a href="#"><i class="bi bi-chevron-double-right"></i>Nuestra comunidad</a></li>
@@ -521,7 +510,7 @@
         </div>
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5 mb-3">
-            <p class="h5 text-center pb-2">SÃ­guenos en nuestras redes sociales</p>
+            <p class="h5 text-center pb-2">Síguenos en nuestras redes sociales</p>
             <ul class="list-unstyled list-inline social text-center">
               <li class="list-inline-item"><a href="javascript:void();"><i class="bi bi-facebook"></i></a></li>
               <li class="list-inline-item"><a href="javascript:void();"><i class="bi bi-twitter"></i></a></li>
@@ -555,6 +544,5 @@
       })
     </script> -->
   </body>
-
 
 </html>
