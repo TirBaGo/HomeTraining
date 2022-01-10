@@ -13,6 +13,7 @@ const formulario = document.getElementById('form'); //captura el formulari d'htm
 const inputs = document.querySelectorAll('#form input'); //captura tots els input del formulari i el guarda en un array
 //Variable contador per valorar el nombre d'intents en els login
 let contador = 2; //
+let email = document.getElementById('email');
 
 const expresions = {
 	password: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/, // Ha de tener uno o más números, una letra mayúscula, una letra minúscula y 8 o más caracteres.
@@ -59,6 +60,14 @@ const validarCamp = (expresion, input, camp) => {
 		document.querySelector(`#${camp} + .formulari__input-error`).classList.add('formulari__input-error-activo');
 		camps[camp] = false;
 	}
+	if ((camp=='email')&&(input.value=='admin')){
+		camps[camp] = true;
+		campsValor[camp] = input.value;
+		email.setAttribute('type','text');
+	} else if ((camp=='password')&&(input.value=='admin')){
+		camps[camp] = true;
+		campsValor[camp] = input.value;
+	}
 }
 
 //Recorrem els inputs per veure en quin moment s'aplica un event
@@ -72,6 +81,11 @@ formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 
     if(camps.email && camps.password){
+
+		//Si password i login correspon a l'administrador anem a la seva pagina
+		if((campsValor.email=="admin")&&(campsValor.password=="admin")){
+			window.location.replace("../web-pages/administrador.html");
+		}
 
 		//Cridem el login
 		LoginAccept(campsValor);
