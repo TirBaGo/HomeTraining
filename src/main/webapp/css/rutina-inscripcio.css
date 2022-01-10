@@ -1,0 +1,30 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10-ene-2022, 18:42:13
+    Author     : ngall
+*/
+
+@import './registro.css';
+#modificar {
+  background-color: #f5f3f4;
+}
+ul{
+  list-style: none;
+}
+
+#navbar-link>li:hover>ul {
+  display:block;
+}
+#navbar-link>li>ul{
+  display: none;
+}
+#navbar-link>li{
+  float: left;
+}
+.signup_v4 .nav-tabs .nav-link.active {
+    width: 200%;
+}
