@@ -1,0 +1,21 @@
+@import './registro.css';
+#modificar {
+  background-color: #f5f3f4;
+}
+ul{
+  list-style: none;
+}
+
+#navbar-link>li:hover>ul {
+  display:block;
+}
+#navbar-link>li>ul{
+  display: none;
+}
+#navbar-link>li{
+  float: left;
+}
+.signup_v4 .nav-tabs .nav-link.active {
+    width: 200%;
+}
+
