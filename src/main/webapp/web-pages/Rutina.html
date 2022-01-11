@@ -19,8 +19,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css" />
 
-    <link href="../css/ModificarUsuario.css" rel="stylesheet" />
-    <!-- <link href="../css/login.css" rel="stylesheet" /> -->
+    <link href="../css/rutina-inscripcio.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -37,11 +36,7 @@
               <a class="nav-link mr-5 pr-5" href="../web-pages/usuario.html">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link mr-5 pr-5" href="#" >Programas</a>
-               <ul>
-                <li><a href="../web-pages/buscar-rutina-usuario.html">Buscar Rutinas</a></li>
-                <li><a href="../web-pages/Inscripcions.html">Inscripciones</a></li>
-               </ul> 
+              <a class="nav-link mr-5" href="../web-pages/buscar-rutina-usuario.html">Programas</a>
             </li>
             <li class="nav-item">
               <a class="nav-link mr-5" href="#">Acerca de nosotros</a>
@@ -53,9 +48,9 @@
               <a class="nav-link mr-5 pr-5" href="../web-pages/ContactoLogado.html">Contacto</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" id="datos">Contenido</a>
+                <a class="nav-link" href="#" id="datos">Datos</a>
                <ul>
-                <li><a href="#">Modificar datos</a></li>
+                <li><a href="../web-pages/ModificarUsuario.html">Modificar datos</a></li>
                 <li><a href="../web-pages/BajaUsuario.html">Baja</a></li>
                 <li><a id="logout" href="../index.html">Log Out</a></li>
                </ul> 
@@ -66,73 +61,108 @@
     </header>
 
     <main>
-
-      <section id="modificar" class="container">
-
+        <!--Mostrar Rutina-->
+        <section id="crear-rutina" class="container">
+          
         <div class="card signup_v4 mb-30">
           <div class="card-body">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item" role="presentation"> <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab"
-                  aria-controls="login" aria-selected="true" style="text-transform: uppercase;">Modifica tus datos</a> </li>
+                  aria-controls="login" aria-selected="true" style="text-transform: uppercase;">rutina</a> </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Modificar datos</h4>
-                <form id="form">
-                  <div class="form-row">
-                    <div class="form-group col-md-12"> <label for="nom">Nombre</label> <input type="text" class="form-control" name="nom" id="nom"
-                         required=""> </div>
-                    <div class="form-group col-md-12"> <label for="cognom1">Primer apellido</label> <input type="text" class="form-control" name="cognom1"
-                        id="cognom1"  required=""> </div>
-                    <div class="form-group col-md-12"> <label for="cognom2">Segundo apellido</label> <input type="text" class="form-control" name="cognom2"
-                        id="cognom2"  required=""> </div>
-                  </div>
-                  <div class="form-row">
-                    <div class="form-group col-md-12"> <label for="email">Correo electrónico</label> <input type="email" class="form-control" name="email"
-                        id="email"  required=""> </div>
-
-                    <div class="form-group col-md-12"> <label for="telefon">Teléfono de contacto</label> <input type="tel" class="form-control" name="telefon"
-                        id="telefon" minlength="9" maxlength="11" required>
-                    </div>
-
-                    <div class="form-group col-md-12"> <label for="adreca">Dirección</label> <input type="text" class="form-control" name="adreca"
-                        id="adreca"  required="" size="100"> </div>
-
-                    <div class="form-group col-md-12"> <label for="codpost">Código Postal</label> <input type="number" class="form-control" name="codpost"
-                        id="cp"  minlength="5" > </div>
-
-                    <div class="form-group col-md-12"> <label for="poblacio">Población</label> <input type="text" class="form-control" name="poblacio"
-                        id="poblacio"  required=""> </div>
-
-                    <div class="form-group col-md-12"> <label for="provincia">Provincia</label> <input type="text" class="form-control" name="provincia"
-                        id="provincia"  required=""> </div>
-
-                    <div class="form-group col-md-12"> <label for="password">Contraseña Nueva</label> <span class="btn-show-pass"> <i
-                      class="bi bi-eye-fill"></i></span><input type="password" class="form-control" name="password"
-                        id="password" placeholder="Escriba su Contraseña"  
-                        title="Ha de tener uno o más números, una letra mayúscula, una letra minúscula y 8 o más caracteres."> </div>
-                  </div>
-                  <div class="form-row">
-                    <div class="form-group col-md-12"> <label for="passwordRep">Confirme la contraseña Nueva</label> <input type="password"
-                        class="form-control" name="passwordRep" id="passwordRep" placeholder="Escriba otra vez su contraseña" 
-                        title="Ha de tener uno o más números, una letra mayúscula, una letra minúscula y 8 o más caracteres."> </div>
-                  </div>
-                  
-                  <hr class="mt-3 mb-4">
-                  <div class="col-12">
-                    <div class="d-flex flex-wrap justify-content-between align-items-center">
-                        <div class="custom-checkbox d-block">  </div>
-                       <button class="btn btn-dark mt-3 mt-sm-0" type="submit">Modificar datos</button>
-                    </div>
-                  </div>
-                </form>
-
+              <div class="tab-pane fade show active" id="imatges" role="tabpanel" aria-labelledby="login-tab">
+                <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">rutina</h4>
+                <img class="img-responsive"
+                src="https://i.pinimg.com/564x/fd/4f/fe/fd4ffe3a0b068f2034fcd7dbbf76259c.jpg"
+                width="200" height="300" class="d-block w-100" alt="Rutina para gluteos" />
+                <img class="img-responsive"
+                src="https://i.pinimg.com/564x/65/20/9d/65209d78c50c2921476a2416325e52b8.jpg"
+                width="200" height="300" class="d-block w-100" alt="Rutina para piernas" />
+                <img class="img-responsive"
+                src="https://i.pinimg.com/564x/aa/80/d4/aa80d4e7ef7dbd2e23a8354554f3f2b4.jpg"
+                width="200" height="300" class="d-block w-100" alt="Entrenamiento cuerpo entero" />
+                <img class="img-responsive"
+                src="https://i.pinimg.com/564x/63/4a/16/634a16b825799d656e43025f458be954.jpg"
+                width="200" height="300" class="d-block w-100" alt="Tabla de ejercicios para la espalda" />
+                <img class="img-responsive"
+                src="https://i.pinimg.com/736x/66/86/e0/6686e016f70dfe4e641480fc34aa4c13.jpg"
+                width="200" height="300" class="d-block w-100" alt="Rutina para brazos" />
               </div>
-              </div>
+                <div class="tab-pane fade show active">
+                    <div class="row">
+                        
+                        <h3 class=" col-md-8 mt-4">ID rutina</h3>
+                        <label for="id_rutina" class="mt-4" id="id_rutina"></label>
+                    
+                    </div>
+                    <div class="row">
+                        
+                        <h3 class=" col-md-8 mt-4">Nom Rutina</h3>
+                        <label for="nom_rutina" class="mt-4" id="nom_rutina"></label>
+                    
+                    </div>
+                    <div class="row">
+                        
+                        <h3 class=" col-md-8 mt-4">DNI entrenador</h3>
+                        <label for="dni_entrenador" class="mt-4" id="dni_entrenador"></label>
+                    
+                    </div>
+                    <div class="row">
+                        
+                        <h3 class=" col-md-8 mt-4">Nom Accessori</h3>
+                        <label for="nom_accessori" class="mt-4" id="nom_accessori"></label>
+                    
+                    </div>
+                    <div class="row">
+                        
+                        <h3 class=" col-md-8 mt-4">Nom Modalitat</h3>
+                        <label for="nom_modalitat" class="mt-4" id="nom_modalitat"></label>
+                    
+                    </div>
+                    <div class="row">
+                        
+                        <h3 class=" col-md-8 mt-4">Preu</h3>
+                        <label for="preu" class="mt-4" id="preu"></label>
+                    
+                    </div>
+                    <div class="row">
+                        
+                        <h3 class=" col-md-8 mt-4">Activa</h3>
+                        <label for="activa" class="mt-4" id="activa"></label>
+                    
+                    </div>
+                    <div class="row">
+                        
+                        <h3 class=" col-md-8 mt-4">Nivell</h3>
+                        <label for="nivell" class="mt-4" id="nivell"></label>
+                    
+                    </div>
+                    <div class="row">
+                        
+                        <h3 class=" col-md-8 mt-4">Duració</h3>
+                        <label for="duracio" class="mt-4" id="duracio"></label>
+                    
+                    </div>
+                    <div class="row">
+                        
+                        <h3 class=" col-md-8 mt-4">Descrpció</h3>
+                        <label for="descrpcio" class="mt-4" id="descrpcio"></label>
+                    
+                    </div>
+                    
+                      
+                </div>
+                                
             </div>
           </div>
         </div>
       </section>
+        
+
+
+    
+
 
     </main>
 
@@ -194,13 +224,14 @@
       crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <!--
     <!-- Custom scripts -->
-    <script src="../js/login.js"></script>
+    <!--<script src="../js/login.js"></script>
 
-          <!-- Carregar CDN axios -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- Script de validació ModificarUsuario.html -->
-    <script src="../js/modificarUsuari.js"></script>
+    <!-- Carregar CDN axios -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Script de validació Buscar-rutina.html -->
+    <!--<script src="../js/usuario.js"></script>-->
 
   </body>
 
