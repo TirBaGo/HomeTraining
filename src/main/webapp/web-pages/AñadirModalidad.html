@@ -48,7 +48,7 @@
               <a class="nav-link mr-5 pr-5" href="#">Contacto</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contenido</a>
+                <a class="nav-link" id="datos" href="#">Contenido</a>
             </li>
           </ul>
         </div>
@@ -67,21 +67,21 @@
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
                 <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Crear modalidad</h4>
-                <form>
+                <form id="form">
                   <div class="form-group col-md-12"> 
                       <label for="inputName">Nombre de la modalidad</label> 
-                      <input type="text" class="form-control" id="inputEmail4" required="" placeholder="Escribe aquí el nombre"> 
+                      <input type="text" class="form-control" id="categoria" required="" placeholder="Escribe aquí el nombre"> 
                   </div>
                     
                   <div class="form-group col-md-12">
                     <label for="exampleFormControlTextarea1">Descripcion para modalidad</label>
-                    <textarea class="form-control col-12" id="exampleFormControlTextarea1" rows="3" placeholder="Escribe aquí la descripción" required=""></textarea>
+                    <textarea class="form-control col-12" id="descripcio_categoria" rows="3" placeholder="Escribe aquí la descripción" required=""></textarea>
                   </div>
                   <hr class="mt-3 mb-4">
                   <div class="col-12">
                     <div class="d-flex flex-wrap justify-content-between align-items-center">
                         <div class="custom-checkbox d-block">  </div>
-                       <button class="btn btn-dark mt-3 mt-sm-0" type="submit">Guardar Modalidad</button>
+                       <button id="boton" class="btn btn-dark mt-3 mt-sm-0" type="submit">Guardar Modalidad</button>
                     </div>
                   </div>
         
@@ -151,6 +151,11 @@
 
     <!-- Custom scripts -->
     <script src="../js/login.js"></script>
+
+    <!-- Carregar CDN axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Script de crear-rutina.html -->
+    <script src="../js/addModalitat.js"></script>
 
   </body>
 
