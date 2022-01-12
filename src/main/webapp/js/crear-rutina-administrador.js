@@ -350,3 +350,4 @@ async function SendDataRegister(rutina){
 //     localStorage.clear();
 // });
 
+

@@ -99,3 +99,4 @@ formulario.addEventListener('submit', (e) => {
 
     buscaModalitat();
 })
+

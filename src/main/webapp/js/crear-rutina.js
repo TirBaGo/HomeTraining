@@ -187,7 +187,6 @@ async function ompleSelect(){
         const dniUsuari = login.dni;
 
         for (let i = 0 ; i < jsonEntrenador.length ; i++){
-            // console.log(datos)
             if (jsonEntrenador[i].dni == dniUsuari){
                 const dades = jsonEntrenador[i];
                 console.log(dades);

@@ -106,3 +106,5 @@ function esborraModalitat (modalitat) {
 
 
 omple();
+
+
