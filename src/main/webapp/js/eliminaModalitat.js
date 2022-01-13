@@ -11,9 +11,9 @@
 //Variables de solo lectura
 const nombre = document.getElementById('nombre');
 const descripcio = document.getElementById('descripcion');
-const eliminar = document.getElementById('eliminarNom');
 const formulario = document.getElementById('form');
-//getRutinas para captar todo el select
+
+//getRutinas para captar totes les modalitats
 const URLModalitats = "http://localhost:8080/ProvaProjecteDAW/api/modalitat/getModalitats";
 
 //Assignem el nom d'Administrador al nav per identificar que està logat
@@ -106,5 +106,3 @@ function esborraModalitat (modalitat) {
 
 
 omple();
-
-

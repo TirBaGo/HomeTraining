@@ -6,6 +6,7 @@
  * 
  * History
  * v1.1 - Pagina administrador
+
  */
 
  let datos = document.getElementById('datos');

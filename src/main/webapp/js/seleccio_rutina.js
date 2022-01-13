@@ -17,6 +17,8 @@ const templateCard = document.getElementById('template-card').content;
 const fragment = document.createDocumentFragment();
 const programesEscollits = document.getElementById('ProgramesEscollits');
 
+//Recuperamos valor del usuari
+const usuario = JSON.parse(localStorage.getItem('usuari'));
 
 
 //getRutinas para captar todo el select
@@ -345,11 +347,13 @@ const pintaCards = data => {
         };
     }
 }
-
+let rutinaId=""; 
 const pinta = producto => {
     rutinaControl = producto;
     programesEscollits.innerHTML = 'PROGRAMES ESCOLLITS';
-    
+    console.log(producto)
+    rutinaId=producto.id_rutina
+    console.log(rutinaId)
     pintaImatge(producto.nom_modalitat);
 
     templateCard.querySelector('h5').textContent = producto.nom
@@ -556,3 +560,72 @@ async function ompleSelectLimitat(select){
 selects.forEach((select) => {
     select.addEventListener('change', opcioEscollida);
 });
+// let selecciona = templateCard.querySelector('button')
+// selecciona.addEventListener("click", alert('hola'))
+async function selecciona(){
+    try {
+        let options={
+            method: "GET",
+            headers: {
+                "Content-type": "application/json; charset=utf-8",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+            }                                
+        },
+        resRutina = await axios (URLRutinas, options),
+        jsonRutina = await resRutina.data;
+
+        console.log(jsonRutina);
+
+        for (let i=0; i<jsonRutina.length; i++){
+            if (rutinaId==jsonRutina[i].id_rutina){
+                seleccionaRutina(jsonRutina[i])
+            }
+        }
+    } catch (err) {
+        //la resposta es diferent de 200 i s'ha produit un error en el login d'usuari i surt un alert informant
+        let message = err.statusText || "S'ha produit un error en el registre";
+        console.log(err);
+    }
+}
+
+async function seleccionaRutina(rutina){
+    console.log(rutina);
+    // location.reload();
+    
+    let campsRutina={
+        "id_inscripcio": 5,
+        "dni_usuari": usuario.dni,
+        "nom_rutina": rutina.nom,
+        "ispagat": false,
+        "data_alta": Date.now(),
+        "data_fi": null,
+    }
+    console.log(campsRutina)
+
+    const URL = "http://localhost:8080/ProvaProjecteDAW/api/inscripcio/addInscripcio";
+
+        try {
+            let options={
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json; charset=utf-8",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+                },
+                data: 
+                    campsRutina,                                
+            },
+            resRutina = await axios (URL, options),
+            jsonRutina = await resRutina.data;
+    
+  
+ 
+        } catch (err) {
+            //la resposta es diferent de 200 i s'ha produit un error en el login d'usuari i surt un alert informant
+            let message = err.statusText || "S'ha produit un error en el registre";
+            console.log(err + message);
+        }
+
+
+}

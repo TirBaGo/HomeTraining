@@ -229,7 +229,7 @@ formulario.addEventListener('submit', (e) => {
 		console.log(campsValorOriginal)
 
 		SendDataChange(campsValorOriginal);
-		// window.location.replace('../web-pages/usuario.html')
+        // window.location.replace('../web-pages/entrenador.html')
 
 	} else {
 		alert('LAS CONTRASEÑAS NO COINCIDEN')

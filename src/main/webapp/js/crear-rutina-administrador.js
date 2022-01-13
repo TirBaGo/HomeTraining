@@ -299,7 +299,7 @@ formulario.addEventListener('submit', (e) => {
 
         rutinaValors.nom = "Rutina " + rutinaValors.nom_modalitat;
 
-        console.log(rutinaValors)
+        rutinaRep(rutinaValors.nom);
 
 		//Cridem diferents funcions per enviar les dades a la taula rutines
 		SendDataRegister(rutinaValors);
@@ -345,9 +345,49 @@ async function SendDataRegister(rutina){
       }
 }
 
-// logout.addEventListener('click', function sortirApp(){
-//     datos.innerHTML = ("Datos");
-//     localStorage.clear();
-// });
+async function rutinaRep(rutina){
+    try {
+		let options = {
+          	method: "GET",
+          	headers: {
+            	"Content-type": "application/json; charset=utf-8",
+				"Access-Control-Allow-Origin": "*"
 
+		  	},
+              data: 
+              rutina,
+            },
+		res = await axios(URLRutinas, options),
+        json = await res.data;
+        
+
+        for (let i=0; i<json.length; i++){
+            if(rutina==0){
+                rutinaValors.nom = "Rutina " + rutinaValors.nom_modalitat;
+            } else if(json[i].nom==rutina){
+                nombreRutina++;
+                canvi();
+            } 
+        }
+
+        console.log(rutinaValors)
+        // Cridem diferents funcions per enviar les dades a la taula rutines
+		SendDataRegister(rutinaValors);
+        
+    } catch (err) {
+        // location.reload();
+		let message = err.statusText || "Ocurrió un error en el registro";
+        console.log('Error' + ': ' + err);
+      }
+}
+
+//Inserim el nom de la rutina
+function canvi(){
+        rutinaValors.nom = "Rutina " + rutinaValors.nom_modalitat + " " + nombreRutina;
+}
+
+logout.addEventListener('click', function sortirApp(){
+    datos.innerHTML = ("Datos");
+    localStorage.clear();
+});
 

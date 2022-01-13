@@ -11,6 +11,23 @@ body {
   border: 1px solid black;
 }
 
+ul{
+  list-style: none;
+}
+
+#navbar-link>li:hover>ul {
+  display:block;
+}
+#navbar-link>li>ul{
+  display: none;
+}
+#navbar-link>li{
+  float: left;
+}
+.signup_v4 .nav-tabs .nav-link.active {
+    width: 200%;
+}
+
 .signup_v4 .social-area {
   text-align: center;
   padding-top: 14px;

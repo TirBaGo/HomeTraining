@@ -101,5 +101,3 @@ formulario.addEventListener('submit', (e) => {
 
     buscaAccessoris();
 })
-
-
