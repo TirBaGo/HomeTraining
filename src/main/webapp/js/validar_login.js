@@ -148,16 +148,9 @@ async function LoginAccept(name){
 
 	if (comprovacio==false){
 		// alert('DADES INCORRECTES');
-		let texto ='Dadas inexistentes. Tienes ' + contador + ' intentos más o cancela para registrarte';
+		let texto ='Dadas inexistentes. Revisa usuario o contraseña';
 		let nuevoIntento = confirm(texto);
 		console.log(nuevoIntento)
-		if (nuevoIntento && contador>0){
-			contador=contador-1;
-			console.log(contador)
-		} else {
-			alert('SE REDIRIGIRÁ A LA PAGINA DE REGISTRO')
-			window.location.replace("../web-pages/registro.html");
-		}
 	}
 
 }     catch (err) {

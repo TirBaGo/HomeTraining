@@ -351,21 +351,16 @@ const pinta = producto => {
     templateCard.querySelector('p').textContent = producto.descripcio;
     templateCard.querySelector('img').setAttribute("alt",producto.descripcio);
     templateCard.querySelector('img').setAttribute("src",src);
-    templateCard.querySelector('button').setAttribute("id", producto.id_rutina)
-    templateCard.querySelector('button').setAttribute("onclick", "selecciona("+producto.id_rutina+")")
 
                    
     const clone = templateCard.cloneNode(true);
     fragment.appendChild(clone);
 
-    // console.log(templateCard.getElementById(producto.id_rutina))
     items.appendChild(fragment)
 
     console.log(items)
 
-
 }
-
 
 
 function pintaImatge(modalitat){
@@ -555,106 +550,4 @@ async function ompleSelectLimitat(select){
 selects.forEach((select) => {
     select.addEventListener('change', opcioEscollida);
 });
-// let selecciona = templateCard.querySelector('button')
-async function selecciona(id){
-    try {
-        let options={
-            method: "GET",
-            headers: {
-                "Content-type": "application/json; charset=utf-8",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
-            }                                
-        },
-        resRutina = await axios (URLRutinas, options),
-        jsonRutina = await resRutina.data;
-
-        console.log(jsonRutina);
-        console.log(id)
-
-        for (let i=0; i<jsonRutina.length; i++){
-            if (id==jsonRutina[i].id_rutina){
-                capturaIdInscripcio(jsonRutina[i])
-            }
-        }
-    } catch (err) {
-        //la resposta es diferent de 200 i s'ha produit un error en el login d'usuari i surt un alert informant
-        let message = err.statusText || "S'ha produit un error en el registre";
-        console.log(err);
-    }
-}
-
-async function capturaIdInscripcio(rutina){
-    console.log(rutina);
-    // location.reload();
-    const URL = "http://localhost:8080/ProvaProjecteDAW/api/inscripcio/getInscripcions";
-
-    try {
-        let options={
-            method: "GET",
-            headers: {
-                "Content-type": "application/json; charset=utf-8",
-                "Access-Control-Allow-Origin": "*",
-            },
-                           
-        },
-        resInscripcio = await axios (URL, options),
-        jsonInscripcio = await resInscripcio.data;
-
-        let lastId = jsonInscripcio[jsonInscripcio.length-1]
-
-        ultimoIdInsc = lastId.id_inscripcio + 1
-
-        seleccionaRutina(rutina,ultimoIdInsc)
-
-
-    } catch (err) {
-        //la resposta es diferent de 200 i s'ha produit un error en el login d'usuari i surt un alert informant
-        let message = err.statusText || "S'ha produit un error en el registre";
-        console.log(err + message);
-    }
-
-
-}
-
-let ultimoIdInsc = 0;
-
-async function seleccionaRutina(rutina,id){
-
-    let campsRutina={
-        "id_inscripcio": id,
-        "dni_usuari": login.dni,
-        "nom_rutina": rutina.nom,
-        "ispagat": false,
-        "data_alta": Date.now(),
-        "data_fi": null
-    }
-    console.log(campsRutina)
-
-    const URL = "http://localhost:8080/ProvaProjecteDAW/api/inscripcio/addInscripcio";
-
-
-
-        try {
-            let options={
-                method: "POST",
-                headers: {
-                    "Content-type": "application/json; charset=utf-8",
-                    "Access-Control-Allow-Origin": "*",
-                },
-                data: 
-                campsRutina,                                
-            },
-            resRutina = await axios (URL, options),
-            jsonRutina = await resRutina.data;
-            alert("RUTINA " + rutina.nom + " SELECCIONADA")
-    
-        } catch (err) {
-            //la resposta es diferent de 200 i s'ha produit un error en el login d'usuari i surt un alert informant
-            let message = err.statusText || "S'ha produit un error en el registre";
-            console.log(err + message);
-        }
-
-}
-
 

@@ -115,6 +115,7 @@
             <label for="">Preu</label>
             <select class="form-control" id="preu" name="preu">
               <option selected>Selecciona el preu</option>
+                   <option>0</option>
                     <option>20</option>
                     <option>30</option>
                     <option>40</option>
@@ -124,7 +125,6 @@
             </select>
           </div>
         </div>
-
         <!-- Programas -->
         <div class="rutinas-container">
           <div class="mensaje-error">
@@ -137,13 +137,13 @@
             <!-- Presentacion de programas -->
           </div>
           <template id="template-card">
-            <div class="col-12 mb-2 col-md-4">
-              <div class="card">
+            <div id="todo" class="col-12 mb-2 col-md-4">
+              <div class="card" id="card">
                 <img src="#" alt="" class="card-img-top">
                 <div class="card-body">
                   <h5>Rutina</h5>
                   <p>Descripcio</p>
-                  <button class="btn btn-dark" id="selecciona" onclick="selecciona()">Seleccionar</button>
+                  <button class="btn btn-dark" >Seleccionar</button>
                 </div>
               </div>
             </div>
@@ -224,3 +224,6 @@
   </body>
 
 </html>
+
+
+
