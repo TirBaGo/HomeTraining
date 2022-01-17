@@ -6,11 +6,14 @@
  * 
  * History
  * v1.1 - Es fa la llista de rutines d'entrenador
-
  */
     
 //Recuperamos valor del usuari
+const usuario = JSON.parse(localStorage.getItem('usuari'));
 const login = JSON.parse(localStorage.getItem('login'));
+const rutina = JSON.parse(localStorage.getItem('rutina'));
+
+
 
 let datos = document.getElementById('datos');
 const logout = document.getElementById('logout');
@@ -24,9 +27,16 @@ const URLRutinas = "http://localhost:8080/ProvaProjecteDAW/api/rutina/getRutines
 
 recullRutina();
 
-let contador = 0;
-let rutinaControl=[];
+// let arrayRutinasEntrenador={
+//     idEntrenador: "",
+//     idRutina: "",
+// }
 
+//Programacion de rellenado de los select
+let rutinaControl=[];
+let rutinaControlUnicos=[];
+let contador = 0;
+let src ="";
 
 //Cridem les dades d'usuari
 async function consultaDadesUsuaris(){
@@ -53,6 +63,7 @@ async function consultaDadesUsuaris(){
             // console.log(datos)
             if (json[i].dni == dniUsuari){
                 const dades = json[i];
+                localStorage.removeItem('entrenador')
                 localStorage.setItem('entrenador', JSON.stringify(dades));
                 datos.innerHTML = dades.nom + " " + dades.cognom1;
                 // autorProgramas.innerHTML = dades.nom + " " + dades.cognom1;
@@ -95,9 +106,6 @@ async function recullRutina(){
             if (jsonRutina[i].dni_entrenador == dniUsuari){
                 let dades = jsonRutina[i];
                 rutinaControl[i]=dades;
-                localStorage.setItem('rutina', JSON.stringify(dades));
-                datos.innerHTML = dades.nom + " " + dades.cognom1;
-                // pintaCards(dades)
 
             }
         }
@@ -115,38 +123,40 @@ async function recullRutina(){
         console.log(err);
     }
 }
-
-
 const pintaCards = data => {
     for (i=0; i<data.length; i++){
-        pinta(data[i])
-    }
+        rutinaControl[i] = data[i]
+        if (contador==0){
+            pinta(data[i])
+        }
+        }
 }
+let rutinaTemporal="";
+let idRutina="";
 
 const pinta = producto => {
-    // rutinaControl = producto;
-    // console.log(rutinaControl)
-    console.log(producto)
-    // programesEscollits.innerHTML = 'PROGRAMES ESCOLLITS';
+
         pintaImatge(producto.nom_modalitat);
 
         templateCard.querySelector('h5').textContent = producto.nom
         templateCard.querySelector('p').textContent = producto.descripcio;
         templateCard.querySelector('img').setAttribute("alt",producto.descripcio);
         templateCard.querySelector('img').setAttribute("src",src);
-        templateCard.querySelector('a').setAttribute("href","../web-pages/ModificarRutina.html");
-    
-                       
+        templateCard.querySelector('button').setAttribute("id", producto.id_rutina)
+        templateCard.querySelector('button').setAttribute("onclick", "selecciona("+producto.id_rutina+")")
+
         const clone = templateCard.cloneNode(true);
         fragment.appendChild(clone);
     
-        if (contador==0){
-            items.appendChild(fragment);
-            contador = contador + 1;
-        } else { 
-            items.appendChild(fragment);
-        }
+        items.appendChild(fragment);
+
+        localStorage.removeItem('rutina');
+
+        // asignaRutina(buscaId)
+
 }
+
+
 
 function esborraProgrames(){
     while (items.firstChild){
@@ -173,6 +183,39 @@ function pintaImatge(modalitat){
             break;
     }
     return src
+}
+
+async function selecciona(id){
+    try {
+        let options={
+            method: "GET",
+            headers: {
+                "Content-type": "application/json; charset=utf-8",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+            }                                
+        },
+        resRutina = await axios (URLRutinas, options),
+        jsonRutina = await resRutina.data;
+
+        console.log(jsonRutina);
+        console.log(id)
+
+        for (let i=0; i<jsonRutina.length; i++){
+            if (id==jsonRutina[i].id_rutina){
+                // capturaIdInscripcio(jsonRutina[i])
+                console.log(jsonRutina[i])
+
+                localStorage.setItem('rutina', JSON.stringify(jsonRutina[i]));
+                window.location.replace("../web-pages/ModificarRutina.html")
+
+            }
+        }
+    } catch (err) {
+        //la resposta es diferent de 200 i s'ha produit un error en el login d'usuari i surt un alert informant
+        let message = err.statusText || "S'ha produit un error en el registre";
+        console.log(err);
+    }
 }
 
 

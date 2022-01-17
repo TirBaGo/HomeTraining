@@ -26,8 +26,8 @@
     <header>
       <nav id="navbar-color" class="navbar navbar-expand-xl navbar-dark">
         <a class="navbar-brand ml-3 mb-5 mb-lg-0" href="../web-pages/usuario.html">
-            <img src="../img/HT_Logo3.png" width="125"  alt="Logo de Home Training" />
-        </a>
+          <img src="../img/HT_Logo3.png" width="125"  alt="Logo de Home Training" />
+      </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -79,11 +79,33 @@
                 <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Visualize o elimine sus inscripciones</h4>
 
               <div class="row red">
-                  <label for="nombre" class="espacio">Nombre</label>
-                  <label for="descripcion" class="espacio">Ver</label>
+                  <label for="nombre" class="espacio">Rutina</label>
+                  <label for="descripcion" class="espacio">Acceso</label>
                   <label for="descripcion" class="espacio">Eliminar</label>
               </div>
               <hr class="mt-3 mb-4">
+
+              <div class="rutinas-container__display">
+                <div class="row" id="items">
+                </div>
+              </div>
+              <!-- Presentacion de programas -->
+              <template id="template">
+                <div class="row" >
+                  <label id="nombre" for="nombre" class="espacio text-success"></label>
+                  <button  class="btn btn-primary m-1 espacio" id="ver">Ver</a></button>
+                  <button class="btn btn-danger m-1 espacio" id="eliminar">Eliminar</a></button>                
+                </div>
+
+              </template>
+              <div class="row">
+                <h4 class="mx-auto" id="totalPreu"></h4>
+                </div>
+                <div class="row">
+                  <h4 class="mx-auto" id="totalDuracio"></h4>
+              </div>
+            </div>
+        <!-- ./Programas -->
               <form>
 
               </form>

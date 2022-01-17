@@ -10,3 +10,8 @@
 
  let datos = document.getElementById('datos');
 datos.innerHTML = "Administrador";
+
+logout.addEventListener('click', function sortirApp(){
+    datos.innerHTML = ("Datos");
+    localStorage.clear();
+});

@@ -28,3 +28,10 @@ ul{
 .signup_v4 .nav-tabs .nav-link.active {
     width: 200%;
 }
+
+.espacio{
+    padding: 10px;
+    width: 325px;
+    padding-left: 30px;
+    text-align: center;
+}
