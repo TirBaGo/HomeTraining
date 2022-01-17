@@ -299,7 +299,7 @@ async function consultaDadesUsuaris(){
             	login,
         },
 		res = await axios(URL, options),
-        json = await res.data; 
+        json = await res.data;
 
         const dniUsuari = usuario.dni;
         for (let i = 0 ; i < json.length ; i++){
@@ -326,3 +326,4 @@ logout.addEventListener('click', function sortirApp(){
     datos.innerHTML = ("Datos");
     localStorage.clear();
 });
+

@@ -12,7 +12,7 @@
  */
 
 //Recuperamos valor del usuari
-const usuario = JSON.parse(localStorage.getItem('usuari'));
+const usuario = JSON.parse(localStorage.getItem('login'));
 
 const nom = document.getElementById('nom');
 const cognom1 = document.getElementById('cognom1');
@@ -196,7 +196,7 @@ const validarPassword2 = () => {
 		campsValorNueva['password'] = inputPassword1.value;
 	}
 }
-
+validarPassword2()
 //Recorrem els inputs per veure en quin moment s'aplica un event
 inputs.forEach((input) => {
 	input.addEventListener('keyup', validarformulari);
@@ -205,6 +205,7 @@ inputs.forEach((input) => {
 
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
+	console.log(camps)
 	if(camps.password){
 		//convertim en valor numeric els camps de telefon i codi postal
 		let valorStringTelefon = campsValorNueva.telefon;
@@ -225,7 +226,10 @@ formulario.addEventListener('submit', (e) => {
         modifiquemValor('provincia');
         modifiquemValor('telefon');
 
+		console.log(campsValorOriginal)
+
 		SendDataChange(campsValorOriginal);
+		// window.location.replace('../web-pages/usuario.html')
 
 	} else {
 		alert('LAS CONTRASEÑAS NO COINCIDEN')
@@ -238,6 +242,8 @@ function modifiquemValor (camp){
             campsValorOriginal[camp]=campsValorNueva[camp]
         }
     }
+	console.log(campsValorNueva)
+	console.log(campsValorOriginal)
 }
 
 

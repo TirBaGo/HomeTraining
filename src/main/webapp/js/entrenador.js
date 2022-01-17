@@ -6,7 +6,6 @@
  * 
  * History
  * v1.1 - Es fa la documentació de rutines d'entrenador
-
  */
     
 //Recuperamos valor del usuari

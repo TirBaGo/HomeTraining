@@ -444,7 +444,7 @@ try {
     json = await res.data;
     console.log(json);
     alert('RUTINA MODIFICADA');
-    localStorage.setItem('rutina', JSON.stringify(json));
+    // localStorage.setItem('rutina', JSON.stringify(json));
     window.location.replace("../web-pages/entrenador.html")
     
 
