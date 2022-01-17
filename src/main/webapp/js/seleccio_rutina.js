@@ -171,7 +171,7 @@ async function ompleSelect(){
         let options={
             method: "GET",
             headers: {
-                "Content-type": "application/json; charset=utf-8",
+                "Content-type": "application/json; char =utf-8",
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
             }                                
@@ -603,7 +603,8 @@ async function capturaIdInscripcio(rutina){
 
         let lastId = jsonInscripcio[jsonInscripcio.length-1]
 
-        ultimoIdInsc = lastId.id_inscripcio + 1
+        ultimoIdInsc = lastId.id_inscripcio + 1;
+        console.log(ultimoIdInsc)
 
         seleccionaRutina(rutina,ultimoIdInsc)
 
@@ -619,7 +620,7 @@ async function capturaIdInscripcio(rutina){
 
 let ultimoIdInsc = 0;
 
-async function seleccionaRutina(rutina,id){
+function seleccionaRutina(rutina,id){
 
     let campsRutina={
         "id_inscripcio": id,
@@ -631,29 +632,16 @@ async function seleccionaRutina(rutina,id){
     }
     console.log(campsRutina)
 
-    const URL = "http://localhost:8080/ProvaProjecteDAW/api/inscripcio/addInscripcio";
+    console.log(rutina)       
+    localStorage.removeItem('rutina');
+    localStorage.setItem('rutina', JSON.stringify(rutina))
+    console.log(rutina)
+    localStorage.removeItem('inscripcio');
+    localStorage.setItem('inscripcio', JSON.stringify(campsRutina))
+
+    window.location.replace("../web-pages/inscripcioRutina.html")
 
 
-
-        try {
-            let options={
-                method: "POST",
-                headers: {
-                    "Content-type": "application/json; charset=utf-8",
-                    "Access-Control-Allow-Origin": "*",
-                },
-                data: 
-                campsRutina,                                
-            },
-            resRutina = await axios (URL, options),
-            jsonRutina = await resRutina.data;
-            alert("RUTINA " + rutina.nom + " SELECCIONADA")
-    
-        } catch (err) {
-            //la resposta es diferent de 200 i s'ha produit un error en el login d'usuari i surt un alert informant
-            let message = err.statusText || "S'ha produit un error en el registre";
-            console.log(err + message);
-        }
 
 }
 

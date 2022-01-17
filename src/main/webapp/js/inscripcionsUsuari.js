@@ -150,14 +150,22 @@ function addrutina(nomRut,rutinas){
         }
     }
 }
-
+let totalPreu = 0;
+let totalDuracio=0;
 
 const pintaCards = data => {
     for (i=0; i<data.length; i++){
         if (contador==0){
             pinta(data[i])
+            console.log(data)
+            totalPreu += data[i].preu;
+            totalDuracio += data[i].duracio;
         }
     }
+    document.getElementById('totalPreu').textContent = 'QUANTITAT INVERTIDA EN RUTINES: ' + totalPreu + "€."
+    document.getElementById('totalDuracio').textContent = 'QUANTITAT DE TEMPS REALITZANT RUTINES: ' + totalDuracio + "min."
+
+
 }
 
 const pinta = producto => {
@@ -165,11 +173,13 @@ const pinta = producto => {
         templateCard.querySelector('#nombre').textContent = producto.nom
         templateCard.querySelector('#ver').setAttribute("onclick", "visualitza("+producto.id_rutina+")")
         templateCard.querySelector('#eliminar').setAttribute("onclick", "elimina_id("+producto.id_rutina+")")
+        
 
         const clone = templateCard.cloneNode(true);
         fragment.appendChild(clone);
 
             items.appendChild(fragment);
+
  
 }
 
@@ -261,7 +271,7 @@ async function elimina_Inscripcio(inscripcio){
 
         console.log(json)
         alert('INSCRIPCIO BORRADA');
-        // location.reload();
+        location.reload();
         
 
     } catch (err) {
